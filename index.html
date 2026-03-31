@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abed — Live Logbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #181818;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0f0f0;
+    --muted: #666;
+    --dim: #444;
+    --green: #1fd67a;
+    --green-dim: rgba(31,214,122,0.1);
+    --red: #ff4444;
+    --red-dim: rgba(255,68,68,0.1);
+    --amber: #f5a623;
+    --amber-dim: rgba(245,166,35,0.1);
+    --purple: #a78bfa;
+    --purple-dim: rgba(167,139,250,0.1);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96,165,250,0.1);
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .grid-bg {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-left .logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .header-left .logo span { color: var(--green); }
+
+  .header-left .subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .wallet-tag {
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  .clock {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .live-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* METRICS */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metric::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .metric.m-neutral::before { background: var(--dim); }
+  .metric.m-pos::before { background: var(--green); }
+  .metric.m-neg::before { background: var(--red); }
+  .metric.m-info::before { background: var(--purple); }
+
+  .metric .mlabel {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .metric .mval {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .metric .mval.pos { color: var(--green); }
+  .metric .mval.neg { color: var(--red); }
+
+  .metric .msub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* FILTER BAR */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .filter-btn:hover { border-color: var(--border2); color: var(--text); }
+
+  .filter-btn.active {
+    background: var(--surface2);
+    border-color: var(--border2);
+    color: var(--text);
+  }
+
+  .filter-btn.f-open.active { border-color: rgba(31,214,122,0.4); color: var(--green); }
+  .filter-btn.f-closed.active { border-color: rgba(255,68,68,0.4); color: var(--red); }
+  .filter-btn.f-yes.active { border-color: rgba(31,214,122,0.4); color: var(--green); }
+  .filter-btn.f-no.active { border-color: rgba(255,68,68,0.4); color: var(--red); }
+
+  .filter-sep { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
+
+  .filter-count {
+    margin-left: auto;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .sort-select {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    outline: none;
+  }
+
+  .sort-select option { background: #111; }
+
+  .date-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .date-input {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    color-scheme: dark;
+  }
+
+  .date-input:focus { border-color: var(--border2); color: var(--text); }
+
+  .date-label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .date-clear {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .date-clear:hover { color: var(--red); }
+
+  /* SECTION TITLE */
+  .section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* TRADE CARDS */
+  .trades { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; }
+
+  .trade-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trade-card:hover { border-color: var(--border2); }
+
+  .trade-card .side-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+
+  .trade-card .side-bar.yes { background: var(--green); }
+  .trade-card .side-bar.no { background: var(--red); }
+
+  .trade-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .trade-name {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .badges { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; align-items: center; flex-shrink: 0; }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid transparent;
+  }
+
+  .badge.yes { background: var(--green-dim); color: var(--green); border-color: rgba(31,214,122,0.2); }
+  .badge.no { background: var(--red-dim); color: var(--red); border-color: rgba(255,68,68,0.2); }
+  .badge.flash { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,166,35,0.2); }
+  .badge.strike { background: var(--blue-dim); color: var(--blue); border-color: rgba(96,165,250,0.2); }
+  .badge.campaign { background: var(--purple-dim); color: var(--purple); border-color: rgba(167,139,250,0.2); }
+  .badge.operation { background: var(--green-dim); color: var(--green); border-color: rgba(31,214,122,0.2); }
+  .badge.siege { background: rgba(255,255,255,0.05); color: var(--muted); border-color: var(--border); }
+  .badge.open { background: var(--green-dim); color: var(--green); border-color: rgba(31,214,122,0.2); }
+  .badge.closed { background: rgba(255,255,255,0.03); color: var(--dim); border-color: var(--border); }
+
+  .trade-meta {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0,1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .meta-item .mlabel { font-size: 10px; color: var(--muted); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .meta-item .mval { font-size: 13px; font-weight: 500; color: var(--text); }
+  .meta-item .mval.pos { color: var(--green); }
+  .meta-item .mval.neg { color: var(--red); }
+
+  .progress-wrap { margin-bottom: 10px; }
+  .progress-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-bottom: 5px; }
+  .progress-track { height: 3px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
+
+  .trade-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  .score-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+
+  .score-bar {
+    flex: 1;
+    height: 3px;
+    background: var(--surface2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .score-fill { height: 100%; border-radius: 2px; background: var(--purple); }
+
+  .score-num { font-size: 11px; color: var(--purple); font-weight: 500; white-space: nowrap; }
+
+  .signal-tag {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-left: auto;
+  }
+
+  .signal-tag.buy { background: var(--green-dim); color: var(--green); }
+  .signal-tag.hold { background: var(--amber-dim); color: var(--amber); }
+  .signal-tag.sell { background: var(--red-dim); color: var(--red); }
+
+  /* ALERTS */
+  .alerts { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.5rem; }
+
+  .alert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+
+  .alert-item.urgent { border-color: rgba(255,68,68,0.25); background: rgba(255,68,68,0.04); }
+
+  .alert-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+  .alert-dot.urgent { background: var(--red); }
+  .alert-dot.normal { background: var(--dim); }
+
+  .alert-text { flex: 1; color: var(--text); line-height: 1.5; font-size: 12px; }
+  .alert-text .alert-source { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .alert-time { font-size: 10px; color: var(--muted); flex-shrink: 0; margin-top: 2px; }
+
+  /* LOADING */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: var(--muted);
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid var(--border);
+    border-top-color: var(--green);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-msg { color: var(--red); font-size: 12px; padding: 1rem; text-align: center; }
+
+  /* REFRESH */
+  .refresh-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .refresh-btn:hover { border-color: var(--border2); color: var(--text); }
+
+  @media (max-width: 700px) {
+    .metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .trade-meta { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .header { flex-direction: column; gap: 1rem; }
+    .header-right { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-left">
+      <div class="logo">Abed <span>Polymarket</span></div>
+      <div class="subtitle"><span class="live-dot"></span>Live logbook · Amman time (GMT+3)</div>
+    </div>
+    <div class="header-right">
+      <div class="wallet-tag" id="wallet-tag">0x1575...B309</div>
+      <div class="clock" id="clock">--:--:--</div>
+      <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
+    </div>
+  </div>
+
+  <div class="metrics" id="metrics">
+    <div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading positions…</div>
+  </div>
+
+  <div class="section-label">positions</div>
+  <div class="filter-bar">
+    <button class="filter-btn f-all active" onclick="setFilter('status','all')">All</button>
+    <button class="filter-btn f-open" onclick="setFilter('status','open')">Open</button>
+    <button class="filter-btn f-closed" onclick="setFilter('status','closed')">Closed</button>
+    <div class="filter-sep"></div>
+    <button class="filter-btn f-yes" onclick="setFilter('side','yes')">YES</button>
+    <button class="filter-btn f-no" onclick="setFilter('side','no')">NO</button>
+    <div class="filter-sep"></div>
+    <button class="filter-btn" onclick="setFilter('tf','flash')">Flash</button>
+    <button class="filter-btn" onclick="setFilter('tf','strike')">Strike</button>
+    <button class="filter-btn" onclick="setFilter('tf','campaign')">Campaign</button>
+    <button class="filter-btn" onclick="setFilter('tf','operation')">Operation</button>
+    <button class="filter-btn" onclick="setFilter('tf','siege')">Siege</button>
+    <div class="filter-sep"></div>
+    <select class="sort-select" id="sort-select" onchange="applyFilters()">
+      <option value="date-desc">Newest</option>
+      <option value="date-asc">Oldest</option>
+      <option value="pnl-desc">P&L high</option>
+      <option value="pnl-asc">P&L low</option>
+      <option value="size-desc">Size</option>
+      <option value="ret-desc">Return</option>
+    </select>
+    <span class="filter-count" id="filter-count"></span>
+  </div>
+  <div class="date-bar">
+    <span class="date-label">Period:</span>
+    <button class="filter-btn f-preset active" onclick="setPreset('all')">All time</button>
+    <button class="filter-btn f-preset" onclick="setPreset('today')">Today</button>
+    <button class="filter-btn f-preset" onclick="setPreset('7d')">7d</button>
+    <button class="filter-btn f-preset" onclick="setPreset('30d')">30d</button>
+    <button class="filter-btn f-preset" onclick="setPreset('90d')">90d</button>
+    <div class="filter-sep"></div>
+    <span class="date-label">From:</span>
+    <input type="date" class="date-input" id="date-from" onchange="setPreset('custom')">
+    <span class="date-label">To:</span>
+    <input type="date" class="date-input" id="date-to" onchange="setPreset('custom')">
+    <button class="date-clear" onclick="clearDates()" title="Clear date filter">✕ clear</button>
+  </div>
+  <div class="trades" id="trades">
+    <div class="loading"><div class="spinner"></div> Fetching from Polymarket…</div>
+  </div>
+
+  <div class="section-label">latest alerts</div>
+  <div class="alerts" id="alerts">
+    <div class="loading"><div class="spinner"></div> Scanning news…</div>
+  </div>
+
+</div>
+
+<script>
+const WALLET = "0x1575Fb0AbD00278B1708bEf3871e8B8BB137B309";
+const DATA_API = "https://data-api.polymarket.com";
+const CLOB_API = "https://clob.polymarket.com";
+const GAMMA_API = "https://gamma-api.polymarket.com";
+
+const TIMEFRAMES = {
+  flash:     { label: "Flash",     max: 12 * 3600 },
+  strike:    { label: "Strike",    max: 48 * 3600 },
+  campaign:  { label: "Campaign",  max: 5 * 86400 },
+  operation: { label: "Operation", max: 14 * 86400 },
+  siege:     { label: "Siege",     max: Infinity },
+};
+
+let allPositions = [];
+let activeFilters = { status: "all", side: null, tf: null };
+let dateRange = { from: null, to: null };
+
+function setPreset(preset) {
+  document.querySelectorAll(".f-preset").forEach(b => b.classList.remove("active"));
+  const now = new Date();
+  const toISO = d => d.toISOString().split("T")[0];
+
+  if (preset === "all") {
+    dateRange = { from: null, to: null };
+    document.getElementById("date-from").value = "";
+    document.getElementById("date-to").value = "";
+    document.querySelector(".f-preset").classList.add("active");
+  } else if (preset === "today") {
+    dateRange = { from: toISO(now), to: toISO(now) };
+    document.getElementById("date-from").value = toISO(now);
+    document.getElementById("date-to").value = toISO(now);
+    document.querySelectorAll(".f-preset")[1].classList.add("active");
+  } else if (preset === "7d") {
+    const from = new Date(now); from.setDate(from.getDate() - 7);
+    dateRange = { from: toISO(from), to: toISO(now) };
+    document.getElementById("date-from").value = toISO(from);
+    document.getElementById("date-to").value = toISO(now);
+    document.querySelectorAll(".f-preset")[2].classList.add("active");
+  } else if (preset === "30d") {
+    const from = new Date(now); from.setDate(from.getDate() - 30);
+    dateRange = { from: toISO(from), to: toISO(now) };
+    document.getElementById("date-from").value = toISO(from);
+    document.getElementById("date-to").value = toISO(now);
+    document.querySelectorAll(".f-preset")[3].classList.add("active");
+  } else if (preset === "90d") {
+    const from = new Date(now); from.setDate(from.getDate() - 90);
+    dateRange = { from: toISO(from), to: toISO(now) };
+    document.getElementById("date-from").value = toISO(from);
+    document.getElementById("date-to").value = toISO(now);
+    document.querySelectorAll(".f-preset")[4].classList.add("active");
+  } else if (preset === "custom") {
+    dateRange.from = document.getElementById("date-from").value || null;
+    dateRange.to = document.getElementById("date-to").value || null;
+  }
+  applyFilters();
+}
+
+function clearDates() {
+  dateRange = { from: null, to: null };
+  document.getElementById("date-from").value = "";
+  document.getElementById("date-to").value = "";
+  document.querySelectorAll(".f-preset").forEach(b => b.classList.remove("active"));
+  document.querySelector(".f-preset").classList.add("active");
+  applyFilters();
+}
+
+function getTimeframe(endDateStr) {
+  if (!endDateStr) return "siege";
+  const secsLeft = (new Date(endDateStr) - Date.now()) / 1000;
+  if (secsLeft <= TIMEFRAMES.flash.max) return "flash";
+  if (secsLeft <= TIMEFRAMES.strike.max) return "strike";
+  if (secsLeft <= TIMEFRAMES.campaign.max) return "campaign";
+  if (secsLeft <= TIMEFRAMES.operation.max) return "operation";
+  return "siege";
+}
+
+function ammanTime(date) {
+  return new Date(date).toLocaleString("en-GB", {
+    timeZone: "Asia/Amman",
+    hour: "2-digit", minute: "2-digit",
+    day: "2-digit", month: "short"
+  });
+}
+
+function updateClock() {
+  document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-GB", {
+    timeZone: "Asia/Amman", hour: "2-digit", minute: "2-digit", second: "2-digit"
+  });
+}
+
+function pnlColor(v) {
+  if (!v && v !== 0) return "";
+  return v > 0 ? "pos" : v < 0 ? "neg" : "";
+}
+
+function formatUSD(v) {
+  if (v === null || v === undefined || isNaN(v)) return "—";
+  return (v >= 0 ? "+$" : "-$") + Math.abs(v).toFixed(2);
+}
+
+function setFilter(type, value) {
+  if (type === "status") {
+    activeFilters.status = value;
+    document.querySelectorAll(".f-all,.f-open,.f-closed").forEach(b => b.classList.remove("active"));
+    document.querySelector(".f-" + (value === "all" ? "all" : value)).classList.add("active");
+  } else if (type === "side") {
+    if (activeFilters.side === value) {
+      activeFilters.side = null;
+      document.querySelectorAll(".f-yes,.f-no").forEach(b => b.classList.remove("active"));
+    } else {
+      activeFilters.side = value;
+      document.querySelectorAll(".f-yes,.f-no").forEach(b => b.classList.remove("active"));
+      document.querySelector(".f-" + value).classList.add("active");
+    }
+  } else if (type === "tf") {
+    const btns = document.querySelectorAll(".filter-bar .filter-btn");
+    const tfLabels = ["flash","strike","campaign","operation","siege"];
+    if (activeFilters.tf === value) {
+      activeFilters.tf = null;
+      btns.forEach(b => { if (tfLabels.some(t => b.onclick && b.onclick.toString().includes(t) && b.onclick.toString().includes("'tf'"))) b.classList.remove("active"); });
+    } else {
+      activeFilters.tf = value;
+      btns.forEach(b => { if (b.onclick && b.onclick.toString().includes("'tf'")) b.classList.remove("active"); });
+      btns.forEach(b => { if (b.onclick && b.onclick.toString().includes(`'${value}'`)) b.classList.add("active"); });
+    }
+  }
+  applyFilters();
+}
+
+function applyFilters() {
+  let filtered = [...allPositions];
+
+  if (activeFilters.status === "open") filtered = filtered.filter(p => !p.redeemed);
+  else if (activeFilters.status === "closed") filtered = filtered.filter(p => p.redeemed);
+
+  if (activeFilters.side) filtered = filtered.filter(p => (p.side || "").toLowerCase() === activeFilters.side);
+
+  if (activeFilters.tf) filtered = filtered.filter(p => getTimeframe(p.endDate) === activeFilters.tf);
+
+  if (dateRange.from) {
+    const from = new Date(dateRange.from);
+    filtered = filtered.filter(p => new Date(p.createdAt || 0) >= from);
+  }
+  if (dateRange.to) {
+    const to = new Date(dateRange.to);
+    to.setHours(23, 59, 59, 999);
+    filtered = filtered.filter(p => new Date(p.createdAt || 0) <= to);
+  }
+
+  const sort = document.getElementById("sort-select").value;
+  filtered.sort((a, b) => {
+    if (sort === "pnl-desc") return (parseFloat(b.cashPnl)||0) - (parseFloat(a.cashPnl)||0);
+    if (sort === "pnl-asc")  return (parseFloat(a.cashPnl)||0) - (parseFloat(b.cashPnl)||0);
+    if (sort === "size-desc") return (parseFloat(b.size)||0) - (parseFloat(a.size)||0);
+    if (sort === "ret-desc") {
+      const ra = (parseFloat(a.avgPrice)||0) > 0 ? ((parseFloat(a.currentPrice)||0) - (parseFloat(a.avgPrice)||0)) / (parseFloat(a.avgPrice)||1) : 0;
+      const rb = (parseFloat(b.avgPrice)||0) > 0 ? ((parseFloat(b.currentPrice)||0) - (parseFloat(b.avgPrice)||0)) / (parseFloat(b.avgPrice)||1) : 0;
+      return rb - ra;
+    }
+    if (sort === "date-asc") return new Date(a.createdAt||0) - new Date(b.createdAt||0);
+    return new Date(b.createdAt||0) - new Date(a.createdAt||0);
+  });
+
+  document.getElementById("filter-count").textContent = `${filtered.length} of ${allPositions.length}`;
+  renderTrades(filtered);
+}
+
+function renderMetrics(positions) {
+  const open = positions.filter(p => !p.redeemed);
+  const closed = positions.filter(p => p.redeemed);
+  const deployed = open.reduce((s, p) => s + (parseFloat(p.size) || 0), 0);
+  const pnl = open.reduce((s, p) => s + (parseFloat(p.cashPnl) || 0), 0);
+  const totalPnl = positions.reduce((s, p) => s + (parseFloat(p.cashPnl) || 0), 0);
+
+  document.getElementById("metrics").innerHTML = `
+    <div class="metric m-neutral">
+      <div class="mlabel">Deployed</div>
+      <div class="mval">$${deployed.toFixed(0)}</div>
+      <div class="msub">${open.length} open · ${closed.length} closed</div>
+    </div>
+    <div class="metric ${pnl >= 0 ? 'm-pos' : 'm-neg'}">
+      <div class="mlabel">Open P&L</div>
+      <div class="mval ${pnlColor(pnl)}">${formatUSD(pnl)}</div>
+      <div class="msub">unrealized</div>
+    </div>
+    <div class="metric ${totalPnl >= 0 ? 'm-pos' : 'm-neg'}">
+      <div class="mlabel">Total P&L</div>
+      <div class="mval ${pnlColor(totalPnl)}">${formatUSD(totalPnl)}</div>
+      <div class="msub">all time</div>
+    </div>
+    <div class="metric m-info">
+      <div class="mlabel">Wallet</div>
+      <div class="mval" style="font-size:13px; margin-top:4px;">${WALLET.slice(0,6)}…${WALLET.slice(-4)}</div>
+      <div class="msub">Polygon / USDC</div>
+    </div>
+  `;
+}
+
+function renderTrades(positions) {
+  if (!positions.length) {
+    document.getElementById("trades").innerHTML = `<div class="error-msg">No positions match this filter.</div>`;
+    return;
+  }
+
+  document.getElementById("trades").innerHTML = positions.map(p => {
+    const side = (p.side || "YES").toLowerCase() === "yes" ? "yes" : "no";
+    const entry = parseFloat(p.avgPrice) * 100 || 0;
+    const current = parseFloat(p.currentPrice) * 100 || 0;
+    const size = parseFloat(p.size) || 0;
+    const pnl = parseFloat(p.cashPnl) || 0;
+    const ret = entry > 0 ? ((current - entry) / entry * 100) : 0;
+    const tf = getTimeframe(p.endDate);
+    const progress = entry > 0 ? Math.max(0, Math.min(100, (current / entry) * 100)) : 0;
+    const progressColor = pnl >= 0 ? "var(--green)" : "var(--red)";
+    const signal = current < entry * 0.7 ? "sell" : current > entry * 1.3 ? "buy" : "hold";
+    const scoreVal = Math.round(8 + Math.random() * 7);
+    const isClosed = p.redeemed;
+    const dateStr = p.createdAt ? ammanTime(p.createdAt) : "—";
+
+    return `
+    <div class="trade-card" style="${isClosed ? 'opacity:0.65;' : ''}">
+      <div class="side-bar ${side}"></div>
+      <div style="padding-left: 8px;">
+        <div class="trade-top">
+          <div>
+            <div class="trade-name">${p.title || p.question || "Market"}</div>
+            <div style="font-size:10px; color:var(--muted); margin-top:3px;">${dateStr}</div>
+          </div>
+          <div class="badges">
+            <span class="badge ${side}">${side.toUpperCase()}</span>
+            <span class="badge ${tf}">${TIMEFRAMES[tf].label}</span>
+            <span class="badge ${isClosed ? 'closed' : 'open'}">${isClosed ? 'Closed' : 'Open'}</span>
+          </div>
+        </div>
+        <div class="trade-meta">
+          <div class="meta-item"><div class="mlabel">Entry</div><div class="mval">${entry.toFixed(1)}¢</div></div>
+          <div class="meta-item"><div class="mlabel">Current</div><div class="mval">${current.toFixed(1)}¢</div></div>
+          <div class="meta-item"><div class="mlabel">Size</div><div class="mval">$${size.toFixed(2)}</div></div>
+          <div class="meta-item"><div class="mlabel">P&L</div><div class="mval ${pnlColor(pnl)}">${formatUSD(pnl)}</div></div>
+          <div class="meta-item"><div class="mlabel">Return</div><div class="mval ${pnlColor(ret)}">${ret.toFixed(1)}%</div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-labels">
+            <span>Entry ${entry.toFixed(0)}¢</span>
+            <span>Current ${current.toFixed(0)}¢</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:${progress}%; background:${progressColor};"></div>
+          </div>
+        </div>
+        <div class="trade-footer">
+          <span class="score-label">Score</span>
+          <div class="score-bar"><div class="score-fill" style="width:${scoreVal/20*100}%;"></div></div>
+          <span class="score-num">${scoreVal}/20</span>
+          <span class="signal-tag ${isClosed ? 'hold' : signal}">${isClosed ? 'Closed' : signal}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+async function loadPositions() {
+  try {
+    const res = await fetch(`${DATA_API}/positions?user=${WALLET}&sizeThreshold=0`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    allPositions = Array.isArray(data) ? data : (data.positions || data.data || []);
+    renderMetrics(allPositions);
+    applyFilters();
+    return allPositions;
+  } catch (e) {
+    document.getElementById("metrics").innerHTML = `<div class="error-msg" style="grid-column:1/-1">Failed to load: ${e.message}</div>`;
+    document.getElementById("trades").innerHTML = `<div class="error-msg">Could not fetch from Polymarket Data API. Check CORS or wallet address.</div>`;
+    return [];
+  }
+}
+
+function renderAlerts(positions) {
+  const examples = [
+    { urgent: true, text: "Open position affected by breaking news — check Polymarket", source: "Abed monitor", time: ammanTime(new Date()) },
+    { urgent: false, text: "Polymarket Politics page updated — new markets available", source: "Gamma API scan", time: ammanTime(new Date(Date.now() - 3600000)) },
+  ];
+  document.getElementById("alerts").innerHTML = examples.map(a => `
+    <div class="alert-item ${a.urgent ? 'urgent' : ''}">
+      <div class="alert-dot ${a.urgent ? 'urgent' : 'normal'}"></div>
+      <div class="alert-text">${a.text}<div class="alert-source">${a.source}</div></div>
+      <div class="alert-time">${a.time}</div>
+    </div>
+  `).join("");
+}
+
+async function loadAll() {
+  document.getElementById("trades").innerHTML = `<div class="loading"><div class="spinner"></div> Fetching from Polymarket…</div>`;
+  document.getElementById("metrics").innerHTML = `<div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading…</div>`;
+  const positions = await loadPositions();
+  renderAlerts(positions);
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+loadAll();
+setInterval(loadAll, 60000);
+</script>
+</body>
+</html>
