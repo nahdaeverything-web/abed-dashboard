@@ -551,5 +551,12 @@
     "headline": "**Report: Downed US airman couldn't make contact at first because he was concussed; US destroyed own",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-05T19:07:37.526651+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Strait of Hormuz traffic returns to normal by end of April?",
+    "score": 14
   }
 ]
