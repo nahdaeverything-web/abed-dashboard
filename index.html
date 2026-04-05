@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abed — Live Logbook</title>
+<title>Abed — Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -11,6 +11,7 @@
     --bg: #0a0a0a;
     --surface: #111111;
     --surface2: #181818;
+    --surface3: #1e1e1e;
     --border: rgba(255,255,255,0.07);
     --border2: rgba(255,255,255,0.12);
     --text: #f0f0f0;
@@ -26,6 +27,8 @@
     --purple-dim: rgba(167,139,250,0.1);
     --blue: #60a5fa;
     --blue-dim: rgba(96,165,250,0.1);
+    --cyan: #22d3ee;
+    --cyan-dim: rgba(34,211,238,0.1);
     --font-display: 'Syne', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
@@ -42,321 +45,139 @@
   }
 
   .grid-bg {
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image:
       linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
 
-  .wrapper {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-  }
+  .wrapper { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
 
   /* HEADER */
   .header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
   }
-
-  .header-left .logo {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-
+  .header-left .logo { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-bottom: 4px; }
   .header-left .logo span { color: var(--green); }
+  .header-left .subtitle { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .wallet-tag { font-size: 11px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; letter-spacing: 0.03em; }
+  .clock { font-size: 13px; font-weight: 500; color: var(--text); }
+  .live-dot { display: inline-block; width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-right: 6px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-  .header-left .subtitle {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  /* NAV TABS */
+  .nav-tabs {
+    display: flex; gap: 2px; margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); padding-bottom: 0;
+  }
+  .nav-tab {
+    background: none; border: none; border-bottom: 2px solid transparent;
+    color: var(--muted); font-family: var(--font-mono); font-size: 11px;
+    padding: 8px 16px; cursor: pointer; transition: all 0.2s;
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active { color: var(--green); border-bottom-color: var(--green); }
+  .nav-tab .tab-badge {
+    display: inline-block; background: var(--green-dim); color: var(--green);
+    font-size: 9px; padding: 1px 5px; border-radius: 3px; margin-left: 6px;
+    font-weight: 600;
   }
 
-  .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
-  }
+  .page { display: none; }
+  .page.active { display: block; }
 
-  .wallet-tag {
-    font-size: 11px;
-    color: var(--muted);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 4px 10px;
-    border-radius: 4px;
-    letter-spacing: 0.03em;
-  }
-
-  .clock {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .live-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--green);
-    border-radius: 50%;
-    margin-right: 6px;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* METRICS */
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0,1fr));
-    gap: 10px;
-    margin-bottom: 1.5rem;
-  }
-
+  /* METRICS ROW */
+  .metrics { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-bottom: 1.5rem; }
   .metric {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
-    position: relative;
-    overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 1rem; position: relative; overflow: hidden;
   }
-
-  .metric::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-  }
-
+  .metric::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
   .metric.m-neutral::before { background: var(--dim); }
   .metric.m-pos::before { background: var(--green); }
   .metric.m-neg::before { background: var(--red); }
   .metric.m-info::before { background: var(--purple); }
-
-  .metric .mlabel {
-    font-size: 10px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-  }
-
-  .metric .mval {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text);
-  }
-
+  .metric.m-amber::before { background: var(--amber); }
+  .metric.m-blue::before { background: var(--blue); }
+  .metric.m-cyan::before { background: var(--cyan); }
+  .metric .mlabel { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .metric .mval { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--text); }
   .metric .mval.pos { color: var(--green); }
   .metric .mval.neg { color: var(--red); }
+  .metric .mval.amber { color: var(--amber); }
+  .metric .mval.blue { color: var(--blue); }
+  .metric .msub { font-size: 10px; color: var(--muted); margin-top: 4px; }
 
-  .metric .msub {
-    font-size: 10px;
-    color: var(--muted);
-    margin-top: 4px;
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
   }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
   /* FILTER BAR */
-  .filter-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
-
+  .filter-bar { display: flex; align-items: center; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
   .filter-btn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 4px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    font-family: var(--font-mono); font-size: 10px; padding: 4px 10px;
+    border-radius: 3px; cursor: pointer; transition: all 0.15s;
+    text-transform: uppercase; letter-spacing: 0.08em;
   }
-
   .filter-btn:hover { border-color: var(--border2); color: var(--text); }
-
-  .filter-btn.active {
-    background: var(--surface2);
-    border-color: var(--border2);
-    color: var(--text);
-  }
-
-  .filter-btn.f-open.active { border-color: rgba(31,214,122,0.4); color: var(--green); }
-  .filter-btn.f-closed.active { border-color: rgba(255,68,68,0.4); color: var(--red); }
-  .filter-btn.f-yes.active { border-color: rgba(31,214,122,0.4); color: var(--green); }
-  .filter-btn.f-no.active { border-color: rgba(255,68,68,0.4); color: var(--red); }
-
+  .filter-btn.active { background: var(--surface2); border-color: var(--border2); color: var(--text); }
   .filter-sep { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
-
-  .filter-count {
-    margin-left: auto;
-    font-size: 10px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
+  .filter-count { margin-left: auto; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
   .sort-select {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 4px 8px;
-    border-radius: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    outline: none;
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    font-family: var(--font-mono); font-size: 10px; padding: 4px 8px;
+    border-radius: 3px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; outline: none;
   }
-
   .sort-select option { background: #111; }
 
-  .date-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+
+  .monitor-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 14px; transition: border-color 0.2s; position: relative; overflow: hidden;
   }
-
-  .date-input {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 4px 8px;
-    border-radius: 3px;
-    outline: none;
-    cursor: pointer;
-    color-scheme: dark;
-  }
-
-  .date-input:focus { border-color: var(--border2); color: var(--text); }
-
-  .date-label {
-    font-size: 10px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .date-clear {
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    cursor: pointer;
-    padding: 4px 6px;
-    border-radius: 3px;
-    transition: color 0.15s;
-  }
-
-  .date-clear:hover { color: var(--red); }
-
-  /* SECTION TITLE */
-  .section-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .monitor-card:hover { border-color: var(--border2); }
+  .monitor-card .mc-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .monitor-card .mc-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .monitor-card .mc-dot.alive { background: var(--green); box-shadow: 0 0 6px rgba(31,214,122,0.4); }
+  .monitor-card .mc-dot.dead { background: var(--red); box-shadow: 0 0 6px rgba(255,68,68,0.4); }
+  .monitor-card .mc-dot.disabled { background: var(--dim); }
+  .monitor-card .mc-dot.stale { background: var(--amber); box-shadow: 0 0 6px rgba(245,166,35,0.3); }
+  .monitor-card .mc-name { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .monitor-card .mc-mode { font-size: 9px; color: var(--muted); padding: 2px 6px; border: 1px solid var(--border); border-radius: 3px; margin-left: auto; text-transform: uppercase; }
+  .monitor-card .mc-stats { display: flex; flex-direction: column; gap: 4px; }
+  .monitor-card .mc-row { display: flex; justify-content: space-between; font-size: 10px; }
+  .monitor-card .mc-row .mc-key { color: var(--muted); }
+  .monitor-card .mc-row .mc-val { color: var(--text); }
 
   /* TRADE CARDS */
   .trades { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; }
-
   .trade-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
-    transition: border-color 0.2s;
-    position: relative;
-    overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 1rem 1.25rem; transition: border-color 0.2s; position: relative; overflow: hidden;
   }
-
   .trade-card:hover { border-color: var(--border2); }
-
-  .trade-card .side-bar {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-  }
-
+  .trade-card .side-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
   .trade-card .side-bar.yes { background: var(--green); }
   .trade-card .side-bar.no { background: var(--red); }
-
-  .trade-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    gap: 12px;
-  }
-
-  .trade-name {
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-    line-height: 1.4;
-    flex: 1;
-  }
-
+  .trade-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 12px; }
+  .trade-name { font-family: var(--font-display); font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; flex: 1; }
   .badges { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; align-items: center; flex-shrink: 0; }
-
   .badge {
-    font-size: 10px;
-    font-weight: 500;
-    padding: 3px 7px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    border: 1px solid transparent;
+    font-size: 10px; font-weight: 500; padding: 3px 7px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid transparent;
   }
-
   .badge.yes { background: var(--green-dim); color: var(--green); border-color: rgba(31,214,122,0.2); }
   .badge.no { background: var(--red-dim); color: var(--red); border-color: rgba(255,68,68,0.2); }
   .badge.flash { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,166,35,0.2); }
@@ -366,129 +187,138 @@
   .badge.siege { background: rgba(255,255,255,0.05); color: var(--muted); border-color: var(--border); }
   .badge.open { background: var(--green-dim); color: var(--green); border-color: rgba(31,214,122,0.2); }
   .badge.closed { background: rgba(255,255,255,0.03); color: var(--dim); border-color: var(--border); }
-
-  .trade-meta {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0,1fr));
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-
+  .trade-meta { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 8px; margin-bottom: 12px; }
   .meta-item .mlabel { font-size: 10px; color: var(--muted); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.08em; }
   .meta-item .mval { font-size: 13px; font-weight: 500; color: var(--text); }
   .meta-item .mval.pos { color: var(--green); }
   .meta-item .mval.neg { color: var(--red); }
-
   .progress-wrap { margin-bottom: 10px; }
   .progress-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-bottom: 5px; }
   .progress-track { height: 3px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
   .progress-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
-
-  .trade-footer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
-  }
-
+  .trade-footer { display: flex; align-items: center; gap: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
   .score-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
-
-  .score-bar {
-    flex: 1;
-    height: 3px;
-    background: var(--surface2);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
+  .score-bar { flex: 1; height: 3px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
   .score-fill { height: 100%; border-radius: 2px; background: var(--purple); }
-
   .score-num { font-size: 11px; color: var(--purple); font-weight: 500; white-space: nowrap; }
-
-  .signal-tag {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 3px 8px;
-    border-radius: 3px;
-    margin-left: auto;
-  }
-
+  .signal-tag { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 8px; border-radius: 3px; margin-left: auto; }
   .signal-tag.buy { background: var(--green-dim); color: var(--green); }
   .signal-tag.hold { background: var(--amber-dim); color: var(--amber); }
   .signal-tag.sell { background: var(--red-dim); color: var(--red); }
 
-  /* ALERTS */
+  /* ALERT ITEMS */
   .alerts { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.5rem; }
-
   .alert-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 10px 14px;
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px;
+    transition: border-color 0.2s;
   }
-
+  .alert-item:hover { border-color: var(--border2); }
   .alert-item.urgent { border-color: rgba(255,68,68,0.25); background: rgba(255,68,68,0.04); }
+  .alert-item.news { border-left: 3px solid var(--amber); }
+  .alert-item.bet { border-left: 3px solid var(--purple); }
+  .alert-item.position { border-left: 3px solid var(--red); }
+  .alert-item.system { border-left: 3px solid var(--blue); }
+  .alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .alert-body { flex: 1; min-width: 0; }
+  .alert-headline { color: var(--text); line-height: 1.5; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .alert-meta { display: flex; gap: 10px; margin-top: 4px; font-size: 10px; color: var(--muted); flex-wrap: wrap; }
+  .alert-score { color: var(--amber); font-weight: 600; }
+  .alert-time { font-size: 10px; color: var(--muted); flex-shrink: 0; margin-top: 2px; white-space: nowrap; }
 
-  .alert-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
-  .alert-dot.urgent { background: var(--red); }
-  .alert-dot.normal { background: var(--dim); }
+  /* DISCOVER MARKET CARDS */
+  .market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .market-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 14px 16px; transition: border-color 0.2s; cursor: pointer;
+  }
+  .market-card:hover { border-color: var(--border2); }
+  .market-card .mkt-question { font-family: var(--font-display); font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.45; margin-bottom: 10px; }
+  .market-card .mkt-prices { display: flex; gap: 8px; margin-bottom: 8px; }
+  .market-card .mkt-price {
+    flex: 1; text-align: center; padding: 6px; border-radius: 4px; font-size: 12px; font-weight: 600;
+  }
+  .market-card .mkt-price.yes-price { background: var(--green-dim); color: var(--green); border: 1px solid rgba(31,214,122,0.15); }
+  .market-card .mkt-price.no-price { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,68,68,0.15); }
+  .market-card .mkt-footer { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); }
+  .market-card .mkt-vol { color: var(--cyan); }
 
-  .alert-text { flex: 1; color: var(--text); line-height: 1.5; font-size: 12px; }
-  .alert-text .alert-source { font-size: 10px; color: var(--muted); margin-top: 2px; }
-
-  .alert-time { font-size: 10px; color: var(--muted); flex-shrink: 0; margin-top: 2px; }
+  /* CONFIG VIEWER */
+  .config-section { margin-bottom: 12px; }
+  .config-header {
+    display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    cursor: pointer; transition: all 0.2s; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .config-header:hover { border-color: var(--border2); }
+  .config-header .cfg-arrow { color: var(--muted); transition: transform 0.2s; font-size: 10px; }
+  .config-header.open .cfg-arrow { transform: rotate(90deg); }
+  .config-header .cfg-mode { margin-left: auto; font-size: 9px; padding: 2px 6px; border-radius: 3px; }
+  .config-header .cfg-mode.auto { background: var(--green-dim); color: var(--green); }
+  .config-header .cfg-mode.disabled { background: var(--red-dim); color: var(--red); }
+  .config-body {
+    display: none; padding: 10px 14px; background: var(--surface2);
+    border: 1px solid var(--border); border-top: none; border-radius: 0 0 6px 6px;
+    font-size: 11px; line-height: 1.8;
+  }
+  .config-body.open { display: block; }
+  .config-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid var(--border); }
+  .config-row:last-child { border-bottom: none; }
+  .config-row .ck { color: var(--muted); }
+  .config-row .cv { color: var(--text); font-weight: 500; }
 
   /* LOADING */
-  .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
-    color: var(--muted);
-    font-size: 12px;
-    gap: 8px;
-  }
-
-  .spinner {
-    width: 14px; height: 14px;
-    border: 2px solid var(--border);
-    border-top-color: var(--green);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
+  .loading { display: flex; align-items: center; justify-content: center; padding: 3rem; color: var(--muted); font-size: 12px; gap: 8px; }
+  .spinner { width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--green); border-radius: 50%; animation: spin 0.8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .error-msg { color: var(--red); font-size: 12px; padding: 1rem; text-align: center; }
+  .empty-msg { color: var(--muted); font-size: 12px; padding: 2rem; text-align: center; }
 
   /* REFRESH */
   .refresh-btn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    font-family: var(--font-mono); font-size: 11px; padding: 4px 10px;
+    border-radius: 4px; cursor: pointer; transition: all 0.2s;
+    text-transform: uppercase; letter-spacing: 0.06em;
   }
-
   .refresh-btn:hover { border-color: var(--border2); color: var(--text); }
 
+  /* DATE INPUTS */
+  .date-bar { display: flex; align-items: center; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
+  .date-input { background: none; border: 1px solid var(--border); color: var(--muted); font-family: var(--font-mono); font-size: 10px; padding: 4px 8px; border-radius: 3px; outline: none; cursor: pointer; color-scheme: dark; }
+  .date-input:focus { border-color: var(--border2); color: var(--text); }
+  .date-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .date-clear { background: none; border: none; color: var(--muted); font-family: var(--font-mono); font-size: 10px; cursor: pointer; padding: 4px 6px; border-radius: 3px; transition: color 0.15s; }
+  .date-clear:hover { color: var(--red); }
+
+  /* POSITION SIGNALS */
+  .signal-row {
+    display: flex; align-items: center; gap: 10px; padding: 8px 14px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    margin-bottom: 6px; font-size: 11px;
+  }
+  .signal-row .sig-name { flex: 1; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .signal-row .sig-count { color: var(--amber); font-weight: 600; min-width: 20px; text-align: center; }
+  .signal-row .sig-level { font-size: 9px; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; font-weight: 600; }
+  .signal-row .sig-level.high { background: var(--red-dim); color: var(--red); }
+  .signal-row .sig-level.low { background: var(--amber-dim); color: var(--amber); }
+
+  /* SCROLLABLE */
+  .scroll-container { max-height: 600px; overflow-y: auto; }
+  .scroll-container::-webkit-scrollbar { width: 4px; }
+  .scroll-container::-webkit-scrollbar-track { background: var(--surface); }
+  .scroll-container::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
+
+  /* RESPONSIVE */
   @media (max-width: 700px) {
     .metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .trade-meta { grid-template-columns: repeat(3, minmax(0,1fr)); }
     .header { flex-direction: column; gap: 1rem; }
     .header-right { align-items: flex-start; }
+    .card-grid { grid-template-columns: 1fr; }
+    .market-grid { grid-template-columns: 1fr; }
+    .nav-tab { padding: 8px 10px; font-size: 10px; }
   }
 </style>
 </head>
@@ -498,8 +328,8 @@
 
   <div class="header">
     <div class="header-left">
-      <div class="logo">Abed <span>Polymarket</span></div>
-      <div class="subtitle"><span class="live-dot"></span>Live logbook · Amman time (GMT+3)</div>
+      <div class="logo">Abed <span>Dashboard</span></div>
+      <div class="subtitle"><span class="live-dot"></span>Live · Amman time (GMT+3)</div>
     </div>
     <div class="header-right">
       <div class="wallet-tag" id="wallet-tag">0x1575...B309</div>
@@ -508,56 +338,113 @@
     </div>
   </div>
 
-  <div class="metrics" id="metrics">
-    <div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading positions…</div>
+  <!-- NAV -->
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="switchPage('discover')">Discover</button>
+    <button class="nav-tab" onclick="switchPage('portfolio')">Portfolio</button>
+    <button class="nav-tab" onclick="switchPage('alerts')">Alerts <span class="tab-badge" id="alert-count">0</span></button>
+    <button class="nav-tab" onclick="switchPage('system')">System</button>
   </div>
 
-  <div class="section-label">positions</div>
-  <div class="filter-bar">
-    <button class="filter-btn f-all active" onclick="setFilter('status','all')">All</button>
-    <button class="filter-btn f-open" onclick="setFilter('status','open')">Open</button>
-    <button class="filter-btn f-closed" onclick="setFilter('status','closed')">Closed</button>
-    <div class="filter-sep"></div>
-    <button class="filter-btn f-yes" onclick="setFilter('side','yes')">YES</button>
-    <button class="filter-btn f-no" onclick="setFilter('side','no')">NO</button>
-    <div class="filter-sep"></div>
-    <button class="filter-btn" onclick="setFilter('tf','flash')">Flash</button>
-    <button class="filter-btn" onclick="setFilter('tf','strike')">Strike</button>
-    <button class="filter-btn" onclick="setFilter('tf','campaign')">Campaign</button>
-    <button class="filter-btn" onclick="setFilter('tf','operation')">Operation</button>
-    <button class="filter-btn" onclick="setFilter('tf','siege')">Siege</button>
-    <div class="filter-sep"></div>
-    <select class="sort-select" id="sort-select" onchange="applyFilters()">
-      <option value="date-desc">Newest</option>
-      <option value="date-asc">Oldest</option>
-      <option value="pnl-desc">P&L high</option>
-      <option value="pnl-asc">P&L low</option>
-      <option value="size-desc">Size</option>
-      <option value="ret-desc">Return</option>
-    </select>
-    <span class="filter-count" id="filter-count"></span>
-  </div>
-  <div class="date-bar">
-    <span class="date-label">Period:</span>
-    <button class="filter-btn f-preset active" onclick="setPreset('all')">All time</button>
-    <button class="filter-btn f-preset" onclick="setPreset('today')">Today</button>
-    <button class="filter-btn f-preset" onclick="setPreset('7d')">7d</button>
-    <button class="filter-btn f-preset" onclick="setPreset('30d')">30d</button>
-    <button class="filter-btn f-preset" onclick="setPreset('90d')">90d</button>
-    <div class="filter-sep"></div>
-    <span class="date-label">From:</span>
-    <input type="date" class="date-input" id="date-from" onchange="setPreset('custom')">
-    <span class="date-label">To:</span>
-    <input type="date" class="date-input" id="date-to" onchange="setPreset('custom')">
-    <button class="date-clear" onclick="clearDates()" title="Clear date filter">✕ clear</button>
-  </div>
-  <div class="trades" id="trades">
-    <div class="loading"><div class="spinner"></div> Fetching from Polymarket…</div>
+  <!-- ==================== DISCOVER PAGE ==================== -->
+  <div class="page active" id="page-discover">
+    <div class="metrics" id="discover-metrics">
+      <div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading trending markets…</div>
+    </div>
+    <div class="section-label">trending markets</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterDiscover('all')">All</button>
+      <button class="filter-btn" onclick="filterDiscover('geopolitics')">Geopolitics</button>
+      <button class="filter-btn" onclick="filterDiscover('crypto')">Crypto</button>
+      <button class="filter-btn" onclick="filterDiscover('politics')">Politics</button>
+      <button class="filter-btn" onclick="filterDiscover('sports')">Sports</button>
+      <div class="filter-sep"></div>
+      <select class="sort-select" id="discover-sort" onchange="renderDiscoverMarkets()">
+        <option value="volume">Volume</option>
+        <option value="newest">Newest</option>
+        <option value="ending">Ending Soon</option>
+      </select>
+      <span class="filter-count" id="discover-count"></span>
+    </div>
+    <div class="market-grid" id="discover-markets">
+      <div class="loading"><div class="spinner"></div> Fetching from Polymarket…</div>
+    </div>
   </div>
 
-  <div class="section-label">latest alerts</div>
-  <div class="alerts" id="alerts">
-    <div class="loading"><div class="spinner"></div> Scanning news…</div>
+  <!-- ==================== PORTFOLIO PAGE ==================== -->
+  <div class="page" id="page-portfolio">
+    <div class="metrics" id="portfolio-metrics">
+      <div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading positions…</div>
+    </div>
+    <div class="section-label">positions</div>
+    <div class="filter-bar">
+      <button class="filter-btn f-all active" onclick="setFilter('status','all')">All</button>
+      <button class="filter-btn f-open" onclick="setFilter('status','open')">Open</button>
+      <button class="filter-btn f-closed" onclick="setFilter('status','closed')">Closed</button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn f-yes" onclick="setFilter('side','yes')">YES</button>
+      <button class="filter-btn f-no" onclick="setFilter('side','no')">NO</button>
+      <div class="filter-sep"></div>
+      <select class="sort-select" id="sort-select" onchange="applyFilters()">
+        <option value="date-desc">Newest</option>
+        <option value="date-asc">Oldest</option>
+        <option value="pnl-desc">P&L high</option>
+        <option value="pnl-asc">P&L low</option>
+        <option value="size-desc">Size</option>
+        <option value="ret-desc">Return</option>
+      </select>
+      <span class="filter-count" id="filter-count"></span>
+    </div>
+    <div class="trades" id="trades">
+      <div class="loading"><div class="spinner"></div> Fetching from Polymarket…</div>
+    </div>
+  </div>
+
+  <!-- ==================== ALERTS PAGE ==================== -->
+  <div class="page" id="page-alerts">
+    <div class="metrics" id="alert-metrics">
+      <div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading alerts…</div>
+    </div>
+    <div class="section-label">alert feed</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterAlerts('all')">All</button>
+      <button class="filter-btn" onclick="filterAlerts('POSITION_ALERT')">⚠️ Position</button>
+      <button class="filter-btn" onclick="filterAlerts('NEWS_SIGNAL')">🔴 News</button>
+      <button class="filter-btn" onclick="filterAlerts('SCHEDULED_BET')">📅 Bets</button>
+      <button class="filter-btn" onclick="filterAlerts('NEW_BET')">💡 NewBet</button>
+      <span class="filter-count" id="alert-filter-count"></span>
+    </div>
+    <div class="scroll-container">
+      <div class="alerts" id="alert-feed">
+        <div class="loading"><div class="spinner"></div> Loading alert history…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SYSTEM PAGE ==================== -->
+  <div class="page" id="page-system">
+    <!-- System metrics -->
+    <div class="metrics" id="system-metrics">
+      <div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading system status…</div>
+    </div>
+
+    <!-- Monitor Health -->
+    <div class="section-label">monitor health</div>
+    <div class="card-grid" id="monitor-grid">
+      <div class="loading"><div class="spinner"></div> Loading monitors…</div>
+    </div>
+
+    <!-- Position Signals -->
+    <div class="section-label">position signals</div>
+    <div id="position-signals">
+      <div class="loading"><div class="spinner"></div> Loading signals…</div>
+    </div>
+
+    <!-- Config Viewer -->
+    <div class="section-label" style="margin-top:1.5rem">configuration (read-only)</div>
+    <div id="config-viewer">
+      <div class="loading"><div class="spinner"></div> Loading config…</div>
+    </div>
   </div>
 
 </div>
@@ -565,69 +452,48 @@
 <script>
 const WALLET = "0x1575Fb0AbD00278B1708bEf3871e8B8BB137B309";
 const DATA_API = "https://data-api.polymarket.com";
-const CLOB_API = "https://clob.polymarket.com";
 const GAMMA_API = "https://gamma-api.polymarket.com";
+const DATA_BASE = "data"; // relative path for pushed JSON files
 
 const TIMEFRAMES = {
-  flash:     { label: "Flash",     max: 12 * 3600 },
-  strike:    { label: "Strike",    max: 48 * 3600 },
-  campaign:  { label: "Campaign",  max: 5 * 86400 },
-  operation: { label: "Operation", max: 14 * 86400 },
-  siege:     { label: "Siege",     max: Infinity },
+  flash: { label: "Flash", max: 12*3600 },
+  strike: { label: "Strike", max: 48*3600 },
+  campaign: { label: "Campaign", max: 5*86400 },
+  operation: { label: "Operation", max: 14*86400 },
+  siege: { label: "Siege", max: Infinity }
 };
 
 let allPositions = [];
-let activeFilters = { status: "all", side: null, tf: null };
-let dateRange = { from: null, to: null };
+let allAlerts = [];
+let allMarkets = [];
+let systemStatus = {};
+let worldContext = {};
+let configData = {};
+let activeFilters = { status: "all", side: null };
+let activeAlertFilter = "all";
+let activeDiscoverFilter = "all";
 
-function setPreset(preset) {
-  document.querySelectorAll(".f-preset").forEach(b => b.classList.remove("active"));
-  const now = new Date();
-  const toISO = d => d.toISOString().split("T")[0];
+// ============ UTILITIES ============
 
-  if (preset === "all") {
-    dateRange = { from: null, to: null };
-    document.getElementById("date-from").value = "";
-    document.getElementById("date-to").value = "";
-    document.querySelector(".f-preset").classList.add("active");
-  } else if (preset === "today") {
-    dateRange = { from: toISO(now), to: toISO(now) };
-    document.getElementById("date-from").value = toISO(now);
-    document.getElementById("date-to").value = toISO(now);
-    document.querySelectorAll(".f-preset")[1].classList.add("active");
-  } else if (preset === "7d") {
-    const from = new Date(now); from.setDate(from.getDate() - 7);
-    dateRange = { from: toISO(from), to: toISO(now) };
-    document.getElementById("date-from").value = toISO(from);
-    document.getElementById("date-to").value = toISO(now);
-    document.querySelectorAll(".f-preset")[2].classList.add("active");
-  } else if (preset === "30d") {
-    const from = new Date(now); from.setDate(from.getDate() - 30);
-    dateRange = { from: toISO(from), to: toISO(now) };
-    document.getElementById("date-from").value = toISO(from);
-    document.getElementById("date-to").value = toISO(now);
-    document.querySelectorAll(".f-preset")[3].classList.add("active");
-  } else if (preset === "90d") {
-    const from = new Date(now); from.setDate(from.getDate() - 90);
-    dateRange = { from: toISO(from), to: toISO(now) };
-    document.getElementById("date-from").value = toISO(from);
-    document.getElementById("date-to").value = toISO(now);
-    document.querySelectorAll(".f-preset")[4].classList.add("active");
-  } else if (preset === "custom") {
-    dateRange.from = document.getElementById("date-from").value || null;
-    dateRange.to = document.getElementById("date-to").value || null;
-  }
-  applyFilters();
+function ammanTime(date) {
+  return new Date(date).toLocaleString("en-GB", { timeZone: "Asia/Amman", hour: "2-digit", minute: "2-digit", day: "2-digit", month: "short" });
 }
 
-function clearDates() {
-  dateRange = { from: null, to: null };
-  document.getElementById("date-from").value = "";
-  document.getElementById("date-to").value = "";
-  document.querySelectorAll(".f-preset").forEach(b => b.classList.remove("active"));
-  document.querySelector(".f-preset").classList.add("active");
-  applyFilters();
+function relativeTime(dateStr) {
+  if (!dateStr) return "—";
+  const diff = (Date.now() - new Date(dateStr).getTime()) / 1000;
+  if (diff < 60) return "just now";
+  if (diff < 3600) return Math.floor(diff/60) + "m ago";
+  if (diff < 86400) return Math.floor(diff/3600) + "h ago";
+  return Math.floor(diff/86400) + "d ago";
 }
+
+function updateClock() {
+  document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Amman", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+}
+
+function pnlColor(v) { return v > 0 ? "pos" : v < 0 ? "neg" : ""; }
+function formatUSD(v) { if (v === null || v === undefined || isNaN(v)) return "—"; return (v >= 0 ? "+$" : "-$") + Math.abs(v).toFixed(2); }
 
 function getTimeframe(endDateStr) {
   if (!endDateStr) return "siege";
@@ -639,28 +505,130 @@ function getTimeframe(endDateStr) {
   return "siege";
 }
 
-function ammanTime(date) {
-  return new Date(date).toLocaleString("en-GB", {
-    timeZone: "Asia/Amman",
-    hour: "2-digit", minute: "2-digit",
-    day: "2-digit", month: "short"
-  });
+function switchPage(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+  document.getElementById("page-" + page).classList.add("active");
+  document.querySelectorAll(".nav-tab").forEach(t => { if (t.textContent.toLowerCase().includes(page)) t.classList.add("active"); });
 }
 
-function updateClock() {
-  document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-GB", {
-    timeZone: "Asia/Amman", hour: "2-digit", minute: "2-digit", second: "2-digit"
-  });
+function alertEmoji(type) {
+  const m = { POSITION_ALERT: "⚠️", NEWS_SIGNAL: "🔴", SCHEDULED_BET: "📅", NEW_BET: "💡", VOLUME_SPIKE: "📊", WHALE_ALERT: "🐋", POSITION_MATCH: "📰", IRAN_BUCKET: "💡" };
+  return m[type] || "📌";
 }
 
-function pnlColor(v) {
-  if (!v && v !== 0) return "";
-  return v > 0 ? "pos" : v < 0 ? "neg" : "";
+function alertClass(type) {
+  const m = { POSITION_ALERT: "position", NEWS_SIGNAL: "news", SCHEDULED_BET: "bet", NEW_BET: "bet", VOLUME_SPIKE: "system", WHALE_ALERT: "system" };
+  return m[type] || "";
 }
 
-function formatUSD(v) {
-  if (v === null || v === undefined || isNaN(v)) return "—";
-  return (v >= 0 ? "+$" : "-$") + Math.abs(v).toFixed(2);
+// ============ PAGE: DISCOVER ============
+
+async function loadDiscoverMarkets() {
+  try {
+    const res = await fetch(`${GAMMA_API}/events?limit=30&active=true&closed=false&order=volume24hr&ascending=false`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const events = await res.json();
+    allMarkets = [];
+    events.forEach(ev => {
+      if (ev.markets) {
+        ev.markets.forEach(m => {
+          allMarkets.push({
+            question: m.question || ev.title,
+            yes: parseFloat(m.outcomePrices?.split(",")[0] || m.bestAsk || 0),
+            no: parseFloat(m.outcomePrices?.split(",")[1] || 0),
+            volume: parseFloat(m.volume24hr || m.volumeNum || 0),
+            endDate: m.endDate || ev.endDate,
+            category: (ev.tags || []).map(t => t.label || t).join(",").toLowerCase(),
+            slug: m.slug || ev.slug,
+            conditionId: m.conditionId
+          });
+        });
+      }
+    });
+    renderDiscoverMetrics();
+    renderDiscoverMarkets();
+  } catch (e) {
+    document.getElementById("discover-markets").innerHTML = `<div class="error-msg">Failed to load markets: ${e.message}</div>`;
+  }
+}
+
+function renderDiscoverMetrics() {
+  const totalVol = allMarkets.reduce((s, m) => s + m.volume, 0);
+  const geo = allMarkets.filter(m => m.category.includes("geopolit") || m.category.includes("iran") || m.category.includes("war")).length;
+  document.getElementById("discover-metrics").innerHTML = `
+    <div class="metric m-cyan"><div class="mlabel">Markets</div><div class="mval">${allMarkets.length}</div><div class="msub">active on Polymarket</div></div>
+    <div class="metric m-pos"><div class="mlabel">24h Volume</div><div class="mval">$${(totalVol/1000000).toFixed(1)}M</div><div class="msub">across all markets</div></div>
+    <div class="metric m-amber"><div class="mlabel">Geopolitics</div><div class="mval">${geo}</div><div class="msub">active geo markets</div></div>
+    <div class="metric m-info"><div class="mlabel">Last Update</div><div class="mval" style="font-size:13px;margin-top:4px">${ammanTime(new Date())}</div><div class="msub">Amman time</div></div>
+  `;
+}
+
+function filterDiscover(cat) {
+  activeDiscoverFilter = cat;
+  document.querySelectorAll("#page-discover .filter-btn").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+  renderDiscoverMarkets();
+}
+
+function renderDiscoverMarkets() {
+  let filtered = [...allMarkets];
+  if (activeDiscoverFilter !== "all") {
+    filtered = filtered.filter(m => m.category.includes(activeDiscoverFilter));
+  }
+  const sort = document.getElementById("discover-sort").value;
+  if (sort === "volume") filtered.sort((a,b) => b.volume - a.volume);
+  else if (sort === "newest") filtered.sort((a,b) => new Date(b.endDate||0) - new Date(a.endDate||0));
+  else if (sort === "ending") filtered.sort((a,b) => new Date(a.endDate||Infinity) - new Date(b.endDate||Infinity));
+
+  document.getElementById("discover-count").textContent = `${filtered.length} markets`;
+
+  if (!filtered.length) { document.getElementById("discover-markets").innerHTML = `<div class="empty-msg">No markets in this category</div>`; return; }
+
+  document.getElementById("discover-markets").innerHTML = filtered.slice(0, 24).map(m => `
+    <div class="market-card" onclick="window.open('https://polymarket.com/event/${m.slug || ""}','_blank')">
+      <div class="mkt-question">${m.question}</div>
+      <div class="mkt-prices">
+        <div class="mkt-price yes-price">YES ${(m.yes * 100).toFixed(0)}¢</div>
+        <div class="mkt-price no-price">NO ${((1-m.yes) * 100).toFixed(0)}¢</div>
+      </div>
+      <div class="mkt-footer">
+        <span>${m.endDate ? ammanTime(m.endDate) : "—"}</span>
+        <span class="mkt-vol">$${m.volume >= 1000 ? (m.volume/1000).toFixed(0)+"K" : m.volume.toFixed(0)}</span>
+      </div>
+    </div>
+  `).join("");
+}
+
+// ============ PAGE: PORTFOLIO ============
+
+async function loadPositions() {
+  try {
+    const res = await fetch(`${DATA_API}/positions?user=${WALLET}&sizeThreshold=0`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    allPositions = Array.isArray(data) ? data : (data.positions || data.data || []);
+    renderPortfolioMetrics();
+    applyFilters();
+    return allPositions;
+  } catch (e) {
+    document.getElementById("portfolio-metrics").innerHTML = `<div class="error-msg" style="grid-column:1/-1">Failed to load: ${e.message}</div>`;
+    return [];
+  }
+}
+
+function renderPortfolioMetrics() {
+  const open = allPositions.filter(p => !p.redeemable);
+  const closed = allPositions.filter(p => p.redeemable);
+  const deployed = open.reduce((s,p) => s + (parseFloat(p.size)||0), 0);
+  const pnl = open.reduce((s,p) => s + (parseFloat(p.cashPnl)||0), 0);
+  const totalPnl = allPositions.reduce((s,p) => s + (parseFloat(p.cashPnl)||0), 0);
+  document.getElementById("portfolio-metrics").innerHTML = `
+    <div class="metric m-neutral"><div class="mlabel">Deployed</div><div class="mval">$${deployed.toFixed(0)}</div><div class="msub">${open.length} open · ${closed.length} closed</div></div>
+    <div class="metric ${pnl>=0?'m-pos':'m-neg'}"><div class="mlabel">Open P&L</div><div class="mval ${pnlColor(pnl)}">${formatUSD(pnl)}</div><div class="msub">unrealized</div></div>
+    <div class="metric ${totalPnl>=0?'m-pos':'m-neg'}"><div class="mlabel">Total P&L</div><div class="mval ${pnlColor(totalPnl)}">${formatUSD(totalPnl)}</div><div class="msub">all time</div></div>
+    <div class="metric m-info"><div class="mlabel">Wallet</div><div class="mval" style="font-size:13px;margin-top:4px">${WALLET.slice(0,6)}…${WALLET.slice(-4)}</div><div class="msub">Polygon / USDC</div></div>
+  `;
 }
 
 function setFilter(type, value) {
@@ -669,59 +637,24 @@ function setFilter(type, value) {
     document.querySelectorAll(".f-all,.f-open,.f-closed").forEach(b => b.classList.remove("active"));
     document.querySelector(".f-" + (value === "all" ? "all" : value)).classList.add("active");
   } else if (type === "side") {
-    if (activeFilters.side === value) {
-      activeFilters.side = null;
-      document.querySelectorAll(".f-yes,.f-no").forEach(b => b.classList.remove("active"));
-    } else {
-      activeFilters.side = value;
-      document.querySelectorAll(".f-yes,.f-no").forEach(b => b.classList.remove("active"));
-      document.querySelector(".f-" + value).classList.add("active");
-    }
-  } else if (type === "tf") {
-    const btns = document.querySelectorAll(".filter-bar .filter-btn");
-    const tfLabels = ["flash","strike","campaign","operation","siege"];
-    if (activeFilters.tf === value) {
-      activeFilters.tf = null;
-      btns.forEach(b => { if (tfLabels.some(t => b.onclick && b.onclick.toString().includes(t) && b.onclick.toString().includes("'tf'"))) b.classList.remove("active"); });
-    } else {
-      activeFilters.tf = value;
-      btns.forEach(b => { if (b.onclick && b.onclick.toString().includes("'tf'")) b.classList.remove("active"); });
-      btns.forEach(b => { if (b.onclick && b.onclick.toString().includes(`'${value}'`)) b.classList.add("active"); });
-    }
+    if (activeFilters.side === value) { activeFilters.side = null; document.querySelectorAll(".f-yes,.f-no").forEach(b => b.classList.remove("active")); }
+    else { activeFilters.side = value; document.querySelectorAll(".f-yes,.f-no").forEach(b => b.classList.remove("active")); document.querySelector(".f-" + value).classList.add("active"); }
   }
   applyFilters();
 }
 
 function applyFilters() {
   let filtered = [...allPositions];
-
   if (activeFilters.status === "open") filtered = filtered.filter(p => !p.redeemable);
   else if (activeFilters.status === "closed") filtered = filtered.filter(p => p.redeemable);
-
-  if (activeFilters.side) filtered = filtered.filter(p => (p.outcome || p.side || "").toLowerCase() === activeFilters.side);
-
-  if (activeFilters.tf) filtered = filtered.filter(p => getTimeframe(p.endDate) === activeFilters.tf);
-
-  if (dateRange.from) {
-    const from = new Date(dateRange.from);
-    filtered = filtered.filter(p => new Date(p.endDate || 0) >= from);
-  }
-  if (dateRange.to) {
-    const to = new Date(dateRange.to);
-    to.setHours(23, 59, 59, 999);
-    filtered = filtered.filter(p => new Date(p.endDate || 0) <= to);
-  }
+  if (activeFilters.side) filtered = filtered.filter(p => (p.outcome||p.side||"").toLowerCase() === activeFilters.side);
 
   const sort = document.getElementById("sort-select").value;
-  filtered.sort((a, b) => {
+  filtered.sort((a,b) => {
     if (sort === "pnl-desc") return (parseFloat(b.cashPnl)||0) - (parseFloat(a.cashPnl)||0);
-    if (sort === "pnl-asc")  return (parseFloat(a.cashPnl)||0) - (parseFloat(b.cashPnl)||0);
+    if (sort === "pnl-asc") return (parseFloat(a.cashPnl)||0) - (parseFloat(b.cashPnl)||0);
     if (sort === "size-desc") return (parseFloat(b.size)||0) - (parseFloat(a.size)||0);
-    if (sort === "ret-desc") {
-      const ra = (parseFloat(a.avgPrice)||0) > 0 ? ((parseFloat(a.curPrice)||0) - (parseFloat(a.avgPrice)||0)) / (parseFloat(a.avgPrice)||1) : 0;
-      const rb = (parseFloat(b.avgPrice)||0) > 0 ? ((parseFloat(b.curPrice)||0) - (parseFloat(b.avgPrice)||0)) / (parseFloat(b.avgPrice)||1) : 0;
-      return rb - ra;
-    }
+    if (sort === "ret-desc") { const ra = (parseFloat(a.avgPrice)||0)>0?((parseFloat(a.curPrice)||0)-(parseFloat(a.avgPrice)||0))/(parseFloat(a.avgPrice)||1):0; const rb = (parseFloat(b.avgPrice)||0)>0?((parseFloat(b.curPrice)||0)-(parseFloat(b.avgPrice)||0))/(parseFloat(b.avgPrice)||1):0; return rb-ra; }
     if (sort === "date-asc") return new Date(a.endDate||0) - new Date(b.endDate||0);
     return new Date(b.endDate||0) - new Date(a.endDate||0);
   });
@@ -730,73 +663,24 @@ function applyFilters() {
   renderTrades(filtered);
 }
 
-function renderMetrics(positions) {
-  const open = positions.filter(p => !p.redeemable);
-  const closed = positions.filter(p => p.redeemable);
-  const deployed = open.reduce((s, p) => s + (parseFloat(p.size) || 0), 0);
-  const pnl = open.reduce((s, p) => s + (parseFloat(p.cashPnl) || 0), 0);
-  const totalPnl = positions.reduce((s, p) => s + (parseFloat(p.cashPnl) || 0), 0);
-
-  document.getElementById("metrics").innerHTML = `
-    <div class="metric m-neutral">
-      <div class="mlabel">Deployed</div>
-      <div class="mval">$${deployed.toFixed(0)}</div>
-      <div class="msub">${open.length} open · ${closed.length} closed</div>
-    </div>
-    <div class="metric ${pnl >= 0 ? 'm-pos' : 'm-neg'}">
-      <div class="mlabel">Open P&L</div>
-      <div class="mval ${pnlColor(pnl)}">${formatUSD(pnl)}</div>
-      <div class="msub">unrealized</div>
-    </div>
-    <div class="metric ${totalPnl >= 0 ? 'm-pos' : 'm-neg'}">
-      <div class="mlabel">Total P&L</div>
-      <div class="mval ${pnlColor(totalPnl)}">${formatUSD(totalPnl)}</div>
-      <div class="msub">all time</div>
-    </div>
-    <div class="metric m-info">
-      <div class="mlabel">Wallet</div>
-      <div class="mval" style="font-size:13px; margin-top:4px;">${WALLET.slice(0,6)}…${WALLET.slice(-4)}</div>
-      <div class="msub">Polygon / USDC</div>
-    </div>
-  `;
-}
-
 function renderTrades(positions) {
-  if (!positions.length) {
-    document.getElementById("trades").innerHTML = `<div class="error-msg">No positions match this filter.</div>`;
-    return;
-  }
-
+  if (!positions.length) { document.getElementById("trades").innerHTML = `<div class="empty-msg">No positions match this filter.</div>`; return; }
   document.getElementById("trades").innerHTML = positions.map(p => {
-    const side = (p.outcome || p.side || "YES").toLowerCase() === "yes" ? "yes" : "no";
-    const entry = parseFloat(p.avgPrice) * 100 || 0;
-    const current = parseFloat(p.curPrice || p.currentPrice) * 100 || 0;
-    const size = parseFloat(p.size) || 0;
-    const pnl = parseFloat(p.cashPnl) || 0;
-    const ret = entry > 0 ? ((current - entry) / entry * 100) : 0;
+    const side = (p.outcome||p.side||"YES").toLowerCase() === "yes" ? "yes" : "no";
+    const entry = parseFloat(p.avgPrice)*100||0, current = parseFloat(p.curPrice||p.currentPrice)*100||0;
+    const size = parseFloat(p.size)||0, pnl = parseFloat(p.cashPnl)||0;
+    const ret = entry>0?((current-entry)/entry*100):0;
     const tf = getTimeframe(p.endDate);
-    const progress = entry > 0 ? Math.max(0, Math.min(100, (current / entry) * 100)) : 0;
-    const progressColor = pnl >= 0 ? "var(--green)" : "var(--red)";
-    const signal = current < entry * 0.7 ? "sell" : current > entry * 1.3 ? "buy" : "hold";
-    const scoreVal = (() => { let h = 0; const s = p.conditionId || p.asset || "x"; for (let i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; } return Math.abs(h % 13) + 8; })();
+    const progress = entry>0?Math.max(0,Math.min(100,(current/entry)*100)):0;
+    const progressColor = pnl>=0?"var(--green)":"var(--red)";
+    const signal = current<entry*0.7?"sell":current>entry*1.3?"buy":"hold";
     const isClosed = p.redeemable;
-    const dateStr = p.endDate ? ammanTime(p.endDate) : "—";
-
     return `
-    <div class="trade-card" style="${isClosed ? 'opacity:0.65;' : ''}">
+    <div class="trade-card" style="${isClosed?'opacity:0.65;':''}">
       <div class="side-bar ${side}"></div>
-      <div style="padding-left: 8px;">
-        <div class="trade-top">
-          <div>
-            <div class="trade-name">${p.title || p.question || "Market"}</div>
-            <div style="font-size:10px; color:var(--muted); margin-top:3px;">${dateStr}</div>
-          </div>
-          <div class="badges">
-            <span class="badge ${side}">${side.toUpperCase()}</span>
-            <span class="badge ${tf}">${TIMEFRAMES[tf].label}</span>
-            <span class="badge ${isClosed ? 'closed' : 'open'}">${isClosed ? 'Closed' : 'Open'}</span>
-          </div>
-        </div>
+      <div style="padding-left:8px">
+        <div class="trade-top"><div><div class="trade-name">${p.title||p.question||"Market"}</div><div style="font-size:10px;color:var(--muted);margin-top:3px">${p.endDate?ammanTime(p.endDate):"—"}</div></div>
+        <div class="badges"><span class="badge ${side}">${side.toUpperCase()}</span><span class="badge ${tf}">${TIMEFRAMES[tf].label}</span><span class="badge ${isClosed?'closed':'open'}">${isClosed?'Closed':'Open'}</span></div></div>
         <div class="trade-meta">
           <div class="meta-item"><div class="mlabel">Entry</div><div class="mval">${entry.toFixed(1)}¢</div></div>
           <div class="meta-item"><div class="mlabel">Current</div><div class="mval">${current.toFixed(1)}¢</div></div>
@@ -804,67 +688,216 @@ function renderTrades(positions) {
           <div class="meta-item"><div class="mlabel">P&L</div><div class="mval ${pnlColor(pnl)}">${formatUSD(pnl)}</div></div>
           <div class="meta-item"><div class="mlabel">Return</div><div class="mval ${pnlColor(ret)}">${ret.toFixed(1)}%</div></div>
         </div>
-        <div class="progress-wrap">
-          <div class="progress-labels">
-            <span>Entry ${entry.toFixed(0)}¢</span>
-            <span>Current ${current.toFixed(0)}¢</span>
-          </div>
-          <div class="progress-track">
-            <div class="progress-fill" style="width:${progress}%; background:${progressColor};"></div>
-          </div>
-        </div>
-        <div class="trade-footer">
-          <span class="score-label">Score</span>
-          <div class="score-bar"><div class="score-fill" style="width:${scoreVal/20*100}%;"></div></div>
-          <span class="score-num">${scoreVal}/20</span>
-          <span class="signal-tag ${isClosed ? 'hold' : signal}">${isClosed ? 'Closed' : signal}</span>
-        </div>
+        <div class="progress-wrap"><div class="progress-labels"><span>Entry ${entry.toFixed(0)}¢</span><span>Current ${current.toFixed(0)}¢</span></div><div class="progress-track"><div class="progress-fill" style="width:${progress}%;background:${progressColor}"></div></div></div>
+        <div class="trade-footer"><span class="signal-tag ${isClosed?'hold':signal}">${isClosed?'Closed':signal}</span></div>
       </div>
     </div>`;
   }).join("");
 }
 
-async function loadPositions() {
+// ============ PAGE: ALERTS ============
+
+async function loadAlerts() {
   try {
-    const res = await fetch(`${DATA_API}/positions?user=${WALLET}&sizeThreshold=0`);
+    const res = await fetch(`${DATA_BASE}/alert_history.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    allPositions = Array.isArray(data) ? data : (data.positions || data.data || []);
-    renderMetrics(allPositions);
-    applyFilters();
-    return allPositions;
+    allAlerts = await res.json();
+    if (!Array.isArray(allAlerts)) allAlerts = [];
+    allAlerts.sort((a,b) => new Date(b.timestamp||0) - new Date(a.timestamp||0));
+    document.getElementById("alert-count").textContent = allAlerts.length;
+    renderAlertMetrics();
+    renderAlerts();
   } catch (e) {
-    document.getElementById("metrics").innerHTML = `<div class="error-msg" style="grid-column:1/-1">Failed to load: ${e.message}</div>`;
-    document.getElementById("trades").innerHTML = `<div class="error-msg">Could not fetch from Polymarket Data API. Check CORS or wallet address.</div>`;
-    return [];
+    document.getElementById("alert-feed").innerHTML = `<div class="error-msg">Failed to load alerts: ${e.message}</div>`;
+    document.getElementById("alert-metrics").innerHTML = `<div class="error-msg" style="grid-column:1/-1">Alert data unavailable — push data/alert_history.json to repo</div>`;
   }
 }
 
-function renderAlerts(positions) {
-  const examples = [
-    { urgent: true, text: "Open position affected by breaking news — check Polymarket", source: "Abed monitor", time: ammanTime(new Date()) },
-    { urgent: false, text: "Polymarket Politics page updated — new markets available", source: "Gamma API scan", time: ammanTime(new Date(Date.now() - 3600000)) },
+function renderAlertMetrics() {
+  const now = Date.now();
+  const h24 = allAlerts.filter(a => (now - new Date(a.timestamp||0).getTime()) < 86400000);
+  const news = h24.filter(a => a.type === "NEWS_SIGNAL");
+  const pos = h24.filter(a => a.type === "POSITION_ALERT");
+  const bets = h24.filter(a => a.type === "SCHEDULED_BET" || a.type === "NEW_BET");
+  const avgScore = news.length ? (news.reduce((s,a) => s + (a.score||0), 0) / news.length).toFixed(1) : "—";
+  document.getElementById("alert-metrics").innerHTML = `
+    <div class="metric m-amber"><div class="mlabel">Alerts 24h</div><div class="mval">${h24.length}</div><div class="msub">${news.length} news · ${pos.length} position</div></div>
+    <div class="metric m-pos"><div class="mlabel">Avg Score</div><div class="mval amber">${avgScore}</div><div class="msub">news signals</div></div>
+    <div class="metric m-info"><div class="mlabel">Bet Ideas</div><div class="mval">${bets.length}</div><div class="msub">last 24h</div></div>
+    <div class="metric m-neutral"><div class="mlabel">Total</div><div class="mval">${allAlerts.length}</div><div class="msub">in history</div></div>
+  `;
+}
+
+function filterAlerts(type) {
+  activeAlertFilter = type;
+  document.querySelectorAll("#page-alerts .filter-btn").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+  renderAlerts();
+}
+
+function renderAlerts() {
+  let filtered = activeAlertFilter === "all" ? allAlerts : allAlerts.filter(a => a.type === activeAlertFilter);
+  document.getElementById("alert-filter-count").textContent = `${filtered.length} alerts`;
+  if (!filtered.length) { document.getElementById("alert-feed").innerHTML = `<div class="empty-msg">No alerts match this filter</div>`; return; }
+
+  document.getElementById("alert-feed").innerHTML = filtered.slice(0, 100).map(a => {
+    const headline = a.headline || a.market || a.question || a.monitor || "Alert";
+    const score = a.score !== undefined ? `Score: ${a.score}` : "";
+    const sources = a.sources ? `${a.sources} sources` : "";
+    const monitor = a.monitor || "";
+    return `
+    <div class="alert-item ${alertClass(a.type)}">
+      <div class="alert-icon">${alertEmoji(a.type)}</div>
+      <div class="alert-body">
+        <div class="alert-headline">${headline}</div>
+        <div class="alert-meta">
+          <span>${a.type || ""}</span>
+          ${score ? `<span class="alert-score">${score}</span>` : ""}
+          ${sources ? `<span>${sources}</span>` : ""}
+          ${monitor ? `<span>${monitor}</span>` : ""}
+        </div>
+      </div>
+      <div class="alert-time">${a.timestamp ? ammanTime(a.timestamp) : "—"}</div>
+    </div>`;
+  }).join("");
+}
+
+// ============ PAGE: SYSTEM ============
+
+async function loadSystemData() {
+  const results = await Promise.allSettled([
+    fetch(`${DATA_BASE}/system_status.json`).then(r => r.json()),
+    fetch(`${DATA_BASE}/world_context.json`).then(r => r.json()),
+    fetch(`${DATA_BASE}/config.json`).then(r => r.json())
+  ]);
+  systemStatus = results[0].status === "fulfilled" ? results[0].value : {};
+  worldContext = results[1].status === "fulfilled" ? results[1].value : {};
+  configData = results[2].status === "fulfilled" ? results[2].value : {};
+  renderSystemMetrics();
+  renderMonitorGrid();
+  renderPositionSignals();
+  renderConfigViewer();
+}
+
+function renderSystemMetrics() {
+  const trend = worldContext.trend_direction || "—";
+  const trendColor = trend === "ACCELERATING" ? "neg" : trend === "DECLINING" ? "pos" : "";
+  const trendClass = trend === "ACCELERATING" ? "m-neg" : trend === "DECLINING" ? "m-pos" : "m-amber";
+  document.getElementById("system-metrics").innerHTML = `
+    <div class="metric ${trendClass}"><div class="mlabel">Trend</div><div class="mval ${trendColor}">${trend}</div><div class="msub">last 6h vs prev 6h</div></div>
+    <div class="metric m-amber"><div class="mlabel">Alerts 24h</div><div class="mval">${worldContext.alerts_24h || 0}</div><div class="msub">${worldContext.dominant_category || "—"}</div></div>
+    <div class="metric m-info"><div class="mlabel">Avg Score</div><div class="mval amber">${worldContext.scores_24h?.avg || "—"}</div><div class="msub">max: ${worldContext.scores_24h?.max || "—"}</div></div>
+    <div class="metric m-neutral"><div class="mlabel">Deployed</div><div class="mval">$${(worldContext.total_deployed || 0).toFixed(0)}</div><div class="msub">${worldContext.open_positions || 0} positions</div></div>
+  `;
+}
+
+function renderMonitorGrid() {
+  const monitors = [
+    { key: "urgent_monitor", name: "Urgent Monitor", icon: "⚠️" },
+    { key: "news_scanner", name: "News Scanner", icon: "🔴" },
+    { key: "gamma_scheduler", name: "Gamma Scheduler", icon: "📅" },
+    { key: "context_builder", name: "Context Builder", icon: "🌍" },
+    { key: "crossref", name: "Crossref", icon: "📰" },
+    { key: "whale_monitor", name: "Whale Monitor", icon: "🐋" },
+    { key: "volume_radar", name: "Volume Radar", icon: "📊" }
   ];
-  document.getElementById("alerts").innerHTML = examples.map(a => `
-    <div class="alert-item ${a.urgent ? 'urgent' : ''}">
-      <div class="alert-dot ${a.urgent ? 'urgent' : 'normal'}"></div>
-      <div class="alert-text">${a.text}<div class="alert-source">${a.source}</div></div>
-      <div class="alert-time">${a.time}</div>
+
+  const cfgModes = {
+    urgent_monitor: configData.urgent_monitor?.mode,
+    news_scanner: configData.scanner?.mode,
+    gamma_scheduler: configData.gamma_scheduler?.mode,
+    context_builder: configData.context_builder?.mode,
+    crossref: configData.crossref?.mode,
+    whale_monitor: configData.whale_monitor?.mode,
+    volume_radar: configData.volume_radar?.mode
+  };
+
+  document.getElementById("monitor-grid").innerHTML = monitors.map(m => {
+    const s = systemStatus[m.key] || {};
+    const mode = cfgModes[m.key] || "unknown";
+    const lastUpdate = s.last_updated || s.timestamp;
+    const age = lastUpdate ? (Date.now() - new Date(lastUpdate).getTime()) / 1000 : Infinity;
+    let dotClass = "alive";
+    if (mode === "disabled") dotClass = "disabled";
+    else if (age > 600) dotClass = "stale";
+    else if (age === Infinity) dotClass = "dead";
+
+    const stats = [];
+    if (s.cycle) stats.push(["Cycle", s.cycle]);
+    if (s.positions_tracked) stats.push(["Positions", s.positions_tracked]);
+    if (s.alerts_processed !== undefined) stats.push(["Processed", s.alerts_processed]);
+    if (s.trend) stats.push(["Trend", s.trend]);
+    if (s.best_score !== undefined) stats.push(["Best Score", s.best_score]);
+    if (s.alert_sent !== undefined) stats.push(["Alert Sent", s.alert_sent ? "Yes" : "No"]);
+    stats.push(["Updated", lastUpdate ? relativeTime(lastUpdate) : "never"]);
+
+    return `
+    <div class="monitor-card">
+      <div class="mc-header">
+        <span>${m.icon}</span>
+        <div class="mc-dot ${dotClass}"></div>
+        <span class="mc-name">${m.name}</span>
+        <span class="mc-mode">${mode}</span>
+      </div>
+      <div class="mc-stats">
+        ${stats.map(([k,v]) => `<div class="mc-row"><span class="mc-key">${k}</span><span class="mc-val">${v}</span></div>`).join("")}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function renderPositionSignals() {
+  const signals = worldContext.position_signals || {};
+  const entries = Object.entries(signals);
+  if (!entries.length) { document.getElementById("position-signals").innerHTML = `<div class="empty-msg">No position signals in the last 12h</div>`; return; }
+
+  entries.sort((a,b) => (b[1].signals_12h||0) - (a[1].signals_12h||0));
+  document.getElementById("position-signals").innerHTML = entries.map(([name, data]) => `
+    <div class="signal-row">
+      <span class="sig-name">${name}</span>
+      <span class="sig-count">${data.signals_12h || 0}</span>
+      <span class="sig-level ${(data.signal_activity||"").toLowerCase()}">${data.signal_activity || "—"}</span>
     </div>
   `).join("");
 }
 
+function renderConfigViewer() {
+  if (!Object.keys(configData).length) { document.getElementById("config-viewer").innerHTML = `<div class="error-msg">Config data unavailable</div>`; return; }
+
+  const sections = Object.entries(configData).filter(([k]) => k !== "_comment");
+  document.getElementById("config-viewer").innerHTML = sections.map(([key, val]) => {
+    if (typeof val !== "object" || val === null) return "";
+    const mode = val.mode;
+    const modeClass = mode === "auto" ? "auto" : mode === "disabled" ? "disabled" : "";
+    const rows = Object.entries(val).filter(([k]) => k !== "_comment" && k !== "mode");
+    return `
+    <div class="config-section">
+      <div class="config-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+        <span class="cfg-arrow">▶</span>
+        <span>${key}</span>
+        ${mode ? `<span class="cfg-mode ${modeClass}">${mode}</span>` : ""}
+      </div>
+      <div class="config-body">
+        ${rows.map(([k,v]) => `<div class="config-row"><span class="ck">${k}</span><span class="cv">${typeof v === "object" ? JSON.stringify(v).slice(0,80) : v}</span></div>`).join("")}
+        ${rows.length === 0 ? '<div style="color:var(--muted)">No settings</div>' : ""}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+// ============ LOAD ALL ============
+
 async function loadAll() {
-  document.getElementById("trades").innerHTML = `<div class="loading"><div class="spinner"></div> Fetching from Polymarket…</div>`;
-  document.getElementById("metrics").innerHTML = `<div class="loading" style="grid-column:1/-1"><div class="spinner"></div> Loading…</div>`;
-  const positions = await loadPositions();
-  renderAlerts(positions);
+  updateClock();
+  loadDiscoverMarkets();
+  loadPositions();
+  loadAlerts();
+  loadSystemData();
 }
 
 setInterval(updateClock, 1000);
-updateClock();
 loadAll();
-setInterval(loadAll, 60000);
+setInterval(loadAll, 120000);
 </script>
 </body>
 </html>

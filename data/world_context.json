@@ -1,0 +1,56 @@
+{
+    "last_updated": "2026-04-05T18:30:01.449470+00:00",
+    "alerts_24h": 27,
+    "alerts_last_6h": 10,
+    "alerts_previous_6h": 14,
+    "trend_direction": "STABLE",
+    "alerts_by_type": {
+        "NEW_BET": 2,
+        "POSITION_ALERT": 10,
+        "NEWS_SIGNAL": 11,
+        "SCHEDULED_BET": 3,
+        "POSITION_MATCH": 1
+    },
+    "category_breakdown": {
+        "geopolitical": 10,
+        "oil": 1
+    },
+    "dominant_category": "geopolitical",
+    "scores_24h": {
+        "avg": 10.3,
+        "max": 13,
+        "count": 11
+    },
+    "position_signals": {
+        "US x Iran ceasefire by May 31? Yes": {
+            "signals_12h": 3,
+            "signal_activity": "HIGH"
+        },
+        "US forces enter Iran by April 30? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "Trump announces end of military operations against Iran by April 30th? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "US forces enter Iran by December 31? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "US x Iran ceasefire by April 30? No": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "Trump announces end of military operations against Iran by April 15th? No": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "Israeli forces cross the Litani River by June 30? Yes": {
+            "signals_12h": 2,
+            "signal_activity": "LOW"
+        }
+    },
+    "open_positions": 20,
+    "total_deployed": 119.89
+}

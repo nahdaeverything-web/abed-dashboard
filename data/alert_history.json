@@ -1,0 +1,547 @@
+[
+  {
+    "timestamp": "2026-04-03T20:38:23.218014+00:00",
+    "monitor": "test",
+    "type": "TEST",
+    "msg": "hello"
+  },
+  {
+    "timestamp": "2026-04-03T20:38:31.394198+00:00",
+    "monitor": "whale_monitor",
+    "type": "WHALE_ALERT",
+    "position": "Will Iran strike Israel?",
+    "trade_size": 75000
+  },
+  {
+    "timestamp": "2026-04-03T20:38:31.394466+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "Iran",
+    "sources": 3,
+    "headline": "Iran deploys warships"
+  },
+  {
+    "timestamp": "2026-04-03T20:38:31.394951+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Gaza ceasefire by June?",
+    "spike_ratio": 3.7
+  },
+  {
+    "timestamp": "2026-04-03T21:30:19.656968+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Will the next diplomatic US-Iran meeting be in Pakistan?",
+    "spike_ratio": 2.0879591108641997
+  },
+  {
+    "timestamp": "2026-04-03T21:41:39.625757+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 8,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0627\u0644\u062c\u0628\u0647\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629: \u062a\u0641\u0639\u064a\u0644 \u0635\u0641\u0627\u0631\u0627\u062a \u0627\u0644\u0625\u0646\u0630\u0627\u0631 \u0641\u064a \u0623\u0641\u064a\u0641\u064a\u0645 \u0648\u064a\u0631\u0624\u0648\u0646 \u0628\u0627\u0644\u062c\u0644\u064a\u0644 \u0627\u0644\u0623\u0639\u0644\u0649 \u0639\u0642\u0628 \u0625\u0637\u0644\u0627\u0642 \u0635"
+  },
+  {
+    "timestamp": "2026-04-03T21:42:25.939628+00:00",
+    "monitor": "news_crossref",
+    "type": "IRAN_BUCKET",
+    "market": "US x Iran ceasefire by April 7?"
+  },
+  {
+    "timestamp": "2026-04-03T21:58:30.740736+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Israel x Hezbollah ceasefire by June 30, 2026?",
+    "spike_ratio": 4.344968044980171
+  },
+  {
+    "timestamp": "2026-04-03T21:58:37.771356+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "US x Iran ceasefire by December 31?",
+    "spike_ratio": 1.173680057518127
+  },
+  {
+    "timestamp": "2026-04-03T21:58:44.711043+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Will Israel strike 4 countries in 2026?",
+    "spike_ratio": 0.9999998999999999
+  },
+  {
+    "timestamp": "2026-04-03T21:58:51.684186+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "US-Iran nuclear deal by June 30?",
+    "spike_ratio": 0.9775512313630569
+  },
+  {
+    "timestamp": "2026-04-03T21:58:58.842737+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "US x Iran ceasefire before Trump visits China?",
+    "spike_ratio": 0.9487933540670185
+  },
+  {
+    "timestamp": "2026-04-03T21:59:05.763816+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Trump announces end of military operations against Iran by June 30th?",
+    "spike_ratio": 0.9460370128963325
+  },
+  {
+    "timestamp": "2026-04-03T21:59:12.664803+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Trump announces end of military operations against Iran by April 7th?",
+    "spike_ratio": 0.9242007369347236
+  },
+  {
+    "timestamp": "2026-04-03T21:59:19.603018+00:00",
+    "monitor": "volume_radar",
+    "type": "VOLUME_SPIKE",
+    "market": "Iran x Israel/US conflict ends by April 7?",
+    "spike_ratio": 0.9116765618867838
+  },
+  {
+    "timestamp": "2026-04-03T22:08:03.681718+00:00",
+    "monitor": "news_crossref",
+    "type": "POSITION_MATCH",
+    "position": "Iran Nuke before 2027?"
+  },
+  {
+    "timestamp": "2026-04-03T22:08:30.170595+00:00",
+    "monitor": "news_crossref",
+    "type": "POSITION_MATCH",
+    "position": "US x Iran ceasefire by May 31?"
+  },
+  {
+    "timestamp": "2026-04-03T22:29:14.628029+00:00",
+    "monitor": "news_crossref",
+    "type": "POSITION_MATCH",
+    "position": "Iran Nuke before 2027?"
+  },
+  {
+    "timestamp": "2026-04-03T23:04:23.646938+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0627\u0644\u0642\u0646\u0627\u0629 12 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629: \u0625\u0635\u0627\u0628\u0629 \u0645\u0628\u0646\u0649 \u0641\u064a \u0634\u0645\u0627\u0644 \u0627\u0644\u0646\u0642\u0628 \u0625\u062b\u0631 \u0647\u062c\u0648\u0645 \u0635\u0627\u0631\u0648\u062e\u064a \u0625\u064a\u0631\u0627\u0646\u064a"
+  },
+  {
+    "timestamp": "2026-04-03T23:05:16.139856+00:00",
+    "monitor": "news_crossref",
+    "type": "IRAN_BUCKET",
+    "market": "US x Iran ceasefire by May 31?"
+  },
+  {
+    "timestamp": "2026-04-04T00:17:28.301332+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "Iran war live: Tehran downs 2 US warplanes; Israel bombs Lebanon bridges\n.\n\ud83d\udd17Tap the link for more: h",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-04T00:32:42.351697+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "\ud83d\udea8\ud835\udc14\ud835\udc12 \ud835\udc03\ud835\udc1e\ud835\udc29\ud835\udc25\ud835\udc28\ud835\udc32\ud835\udc26\ud835\udc1e\ud835\udc27\ud835\udc2d\ud835\udc2c \ud835\udc05\ud835\udc2e\ud835\udc1e\ud835\udc25 \ud835\udc12\ud835\udc29\ud835\udc1e\ud835\udc1c\ud835\udc2e\ud835\udc25\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27 \ud835\udc28\ud835\udc1f \ud835\udc06\ud835\udc2b\ud835\udc28\ud835\udc2e\ud835\udc27\ud835\udc1d \ud835\udc02\ud835\udc28\ud835\udc26\ud835\udc1b\ud835\udc1a\ud835\udc2d \ud835\udc22\ud835\udc27 \ud835\udc08\ud835\udc2b\ud835\udc1a\ud835\udc27 \ud835\udc16\ud835\udc1a\ud835\udc2b\n\nThousands of U.S. Marines and Army pa",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-04T00:41:04.572128+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 29,
+    "headline": "#\u0639\u0627\u062c\u0644 | \u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629 \u0627\u0644\u0628\u062d\u0631\u064a\u0646\u064a\u0629: \u0635\u0641\u0627\u0631\u0627\u062a \u0627\u0644\u0625\u0646\u0630\u0627\u0631 \u062a\u062f\u0648\u064a \u0641\u064a \u0627\u0644\u0645\u0646\u0627\u0645\u0629 \u062a\u062d\u0633\u0628\u0627 \u0644\u0647\u062c\u0648\u0645 \u0625\u064a\u0631\u0627\u0646\u064a"
+  },
+  {
+    "timestamp": "2026-04-04T03:36:02.035039+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "US special forces launch dramatic ground mission inside Iran to rescue downed airman\nhttps://ift.tt/",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-04T04:37:32.862248+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0623\u0636\u0631\u0627\u0631 \u0628\u0631\u0627\u0645\u0627\u062a \u063a\u0627\u0646 \u0641\u064a \u062a\u0644 \u0623\u0628\u064a\u0628 \u062c\u0631\u0627\u0621 \u0633\u0642\u0648\u0637 \u0635\u0627\u0631\u0648\u062e \u0625\u064a\u0631\u0627\u0646\u064a"
+  },
+  {
+    "timestamp": "2026-04-04T05:49:50.922806+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: **The IDF struck key infrastructure sites across Tehran**\n\nYesterday (Friday), the Israeli Air ",
+    "position": "Will the Iranian regime fall before 2027?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-04T06:37:42.169331+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 4,
+    "headline": "\ud83e\udd14\u200f\u0628\u0627\u0645\u0631 \u0627\u0644\u062d\u0631\u0633 \n\n\u062d\u0631\u0643\u0629 \u0639\u0628\u0648\u0631 \u0627\u0644\u0633\u0641\u0646 \u0628\u0645\u0636\u064a\u0642 \u0647\u0631\u0645\u0632 \u0627\u0631\u062a\u0641\u0639\u062a \u0642\u0644\u064a\u0644\u0627 \u0644\u0643\u0646\u0647\u0627 \u0644\u0627 \u062a\u0632\u0627\u0644 \u0639\u0646\u062f \u0645\u0633\u062a\u0648\u0649 \u0636\u0626\u064a\u0644"
+  },
+  {
+    "timestamp": "2026-04-04T07:51:51.402422+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 7,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0648\u0643\u0627\u0644\u0629 \u062a\u0633\u0646\u064a\u0645 \u0639\u0646 \u0631\u0626\u0627\u0633\u0629 \u0627\u0644\u0628\u0631\u0644\u0645\u0627\u0646 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a: \u0644\u0646 \u064a\u062d\u0642 \u0644\u0633\u0641\u0646 \u0623\u064a \u062f\u0648\u0644\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0641\u064a \u0645\u0636\u064a\u0642 \u0647\u0631\u0645\u0632 \u062f\u0648\u0646 \u0625\u0630\u0646 \u0625\u064a\u0631\u0627\u0646"
+  },
+  {
+    "timestamp": "2026-04-04T08:54:00.830414+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "**\u05d1\u05d0\u05d9\u05e8\u05d0\u05df \u05d8\u05d5\u05e2\u05e0\u05d9\u05dd \u05e9\u05de\u05ea\u05d7\u05dd \u05ea\u05d7\u05e0\u05ea \u05d4\u05db\u05d5\u05d7 \u05d4\u05d2\u05e8\u05e2\u05d9\u05e0\u05d9\u05ea \u05d1\u05d1\u05d5\u05e9\u05d0\u05d4\u05e8 \u05d4\u05d5\u05ea\u05e7\u05e3, \u05de\u05d1\u05e0\u05d4 \u05e0\u05e4\u05d2\u05e2 \u05d5\u05d0\u05d7\u05d3 \u05d4\u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05e0\u05d4\u05e8\u05d2**\n\u05dc\u05d8\u05e2\u05e0\u05ea \u05d4\u05d0\u05d9\u05e8\u05d0\u05e0\u05d9\u05dd"
+  },
+  {
+    "timestamp": "2026-04-04T10:19:45.961439+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 7,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0631\u0626\u064a\u0633 \u0627\u0644\u0628\u0631\u0644\u0645\u0627\u0646 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a \u064a\u0644\u0645\u062d \u0644\u0647\u062c\u0645\u0627\u062a \u0639\u0644\u0649 \u0628\u0627\u0628 \u0627\u0644\u0645\u0646\u062f\u0628 [https://ara.tv/he049](https://ara.tv/he049)"
+  },
+  {
+    "timestamp": "2026-04-04T10:52:10.128001+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF:** The IDF completed an additional wave of strikes targeting command centers belonging to the Qu",
+    "position": "Will the Iranian regime fall before 2027?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-04T11:36:00.285954+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "geopolitical",
+    "sources": 5,
+    "headline": "\"\u0627\u0644\u062a\u0643\u062a\u0645 \u0633\u064a\u062f \u0627\u0644\u0645\u0648\u0642\u0641\".. \u0622\u062e\u0631 \u0627\u0644\u062a\u0637\u0648\u0631\u0627\u062a \u0627\u0644\u0623\u0645\u064a\u0631\u0643\u064a\u0629 \u0628\u0634\u0623\u0646 \u0627\u0644\u0645\u0642\u0627\u062a\u0644\u0627\u062a \u0627\u0644\u062a\u064a \u062a\u0645 \u0625\u0633\u0642\u0627\u0637\u0647\u0627 \u0641\u064a \u0625\u064a\u0631\u0627\u0646 \u0645\u0639 \u0627\u0644\u0635\u062d\u0641\u064a \u0639\u0628\u062f \u0627"
+  },
+  {
+    "timestamp": "2026-04-04T11:52:26.802181+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: A short while ago, the IDF identified missiles launched from Iran toward the territory of the S",
+    "position": "US forces enter Iran by April 30?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-04T12:46:11.459272+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 7,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0634\u0631\u0643\u0629 \u0631\u0648\u0633 \u0622\u062a\u0648\u0645 \u0627\u0644\u0631\u0648\u0633\u064a\u0629: \u0625\u062c\u0644\u0627\u0621 198 \u0634\u062e\u0635\u0627 \u0645\u0646 \u0645\u062d\u0637\u0629 \u0628\u0648\u0634\u0647\u0631 \u0627\u0644\u0646\u0648\u0648\u064a\u0629 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a\u0629 \u0636\u0645\u0646 \u0639\u0645\u0644\u064a\u0629 \u0625\u062c\u0644\u0627\u0621 \u0628\u062f\u0623\u062a \u0635\u0628"
+  },
+  {
+    "timestamp": "2026-04-04T13:51:27.869343+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0625\u0630\u0627\u0639\u0629 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a: \u0645\u0642\u0631 \u0642\u064a\u0627\u062f\u0629 \u0623\u0631\u0643\u0627\u0646 \u0627\u0644\u062c\u064a\u0634 \u0648\u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u0623\u0645\u0646 \u0641\u064a \u062a\u0644 \u0623\u0628\u064a\u0628 \u062a\u0639\u0631\u0636\u0627 \u0644\u0623\u0636\u0631\u0627\u0631 \u0646\u062a\u064a\u062c\u0629 \u0642\u0635\u0641 "
+  },
+  {
+    "timestamp": "2026-04-04T14:45:50.951876+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: A short while ago, the IDF identified missiles launched from Iran toward the territory of the S",
+    "position": "US forces enter Iran by April 30?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-04T15:39:29.953333+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 5,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0627\u0644\u0642\u0646\u0627\u0629 12 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629: \u0628\u0644\u0627\u063a\u0627\u062a \u0623\u0648\u0644\u064a\u0629 \u0639\u0646 \u0633\u0642\u0648\u0637 \u0635\u0627\u0631\u0648\u062e \u0627\u0639\u062a\u0631\u0627\u0636\u064a \u0641\u064a \u062c\u0628\u0644 \u0627\u0644\u0645\u0634\u0627\u0631\u0641 \u0628\u0627\u0644\u0642\u062f\u0633"
+  },
+  {
+    "timestamp": "2026-04-04T16:13:12.966656+00:00",
+    "monitor": "newbet",
+    "type": "NEW_BET",
+    "market": "Will Israel or the US target Isfahan Nuclear Technology Center nuclear facility?",
+    "score": 0
+  },
+  {
+    "timestamp": "2026-04-04T16:27:09.170231+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: A short while ago, the IDF identified missiles launched from Iran toward the territory of the S",
+    "position": "US forces enter Iran by April 30?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-04T16:46:54.958316+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "Trump says Iran has 48 hours to make deal as search for US pilot continues\n.\n\ud83d\udd17Tap the link for more:",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-04T17:41:31.166240+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 7,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u05dc\u05e4\u05d9 \u05d4\u05d3\u05d9\u05d5\u05d5\u05d7\u05d9\u05dd \u05d4\u05d8\u05d9\u05dc \u05d9\u05d5\u05e8\u05d8"
+  },
+  {
+    "timestamp": "2026-04-04T18:15:55.759330+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will the Kharg Island oil terminal be hit by April 30?",
+    "score": 14
+  },
+  {
+    "timestamp": "2026-04-04T18:37:55.843223+00:00",
+    "monitor": "newbet",
+    "type": "NEW_BET",
+    "market": "Will Israel or the US target Isfahan Nuclear Technology Center nuclear facility?",
+    "score": 0
+  },
+  {
+    "timestamp": "2026-04-05T05:34:04.020755+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: **The Israeli Air Force struck more than 120 air defense and missile systems of the Iranian ter",
+    "position": "Will the Iranian regime fall before 2027?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-05T05:41:26.780971+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a: \u0647\u0627\u062c\u0645\u0646\u0627 \u0623\u0643\u062b\u0631 \u0645\u0646 120 \u0645\u0646\u0638\u0648\u0645\u0629 \u062f\u0641\u0627\u0639 \u062c\u0648\u064a \u0648\u0635\u0648\u0627\u0631\u064a\u062e \u062a\u0627\u0628\u0639\u0629 \u0644\u0644\u0646\u0638\u0627\u0645 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a \u062e\u0644\u0627\u0644 \u0627\u0644\u0633\u0627\u0639"
+  },
+  {
+    "timestamp": "2026-04-05T06:32:49.172835+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: **Watch: Cooperation between the Israeli Air Force and ground forces in southern Lebanon as par",
+    "position": "Israeli forces cross the Litani River by June 30?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-05T07:02:56.935576+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "\u2018Miraculous\u2019: US rescues second pilot downed in Iran, Trump confirms\n.\n\ud83d\udd17Tap the link for more: https",
+    "position": "US x Iran ceasefire by April 30?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-05T07:09:10.846590+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0645\u0631\u0627\u0633\u0644 \u0627\u0644\u062a\u0644\u0641\u0632\u064a\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a: \u0635\u0641\u0627\u0631\u0627\u062a \u0627\u0644\u0625\u0646\u0630\u0627\u0631 \u062a\u062f\u0648\u064a \u0641\u064a \u062d\u064a\u0641\u0627 \u0648\u0627\u0644\u062c\u0644\u064a\u0644 \u062c\u0631\u0627\u0621 \u0642\u0635\u0641 \u0625\u064a\u0631\u0627\u0646\u064a"
+  },
+  {
+    "timestamp": "2026-04-05T07:24:09.939606+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "**US successfully rescues second airman deep behind enemy lines in Iran, Trump confirms**\n\nIn a repo",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-05T08:17:28.817143+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0645\u0642\u0631 \u062e\u0627\u062a\u0645 \u0627\u0644\u0623\u0646\u0628\u064a\u0627\u0621 \u064a\u0624\u0643\u062f \u0627\u0633\u062a\u0647\u062f\u0627\u0641 \"\u0639\u062f\u0629 \u0637\u0627\u0626\u0631\u0627\u062a \u0623\u0645\u064a\u0631\u0643\u064a\u0629 \u0648\u0625\u0633\u0642\u0627\u0637\u0647\u0627\" \u0641\u064a \u062c\u0646\u0648\u0628 \u0623\u0635\u0641\u0647\u0627\u0646\u060c \u0648\u0627\u0644\u062d\u0631\u0633 \u0627\u0644\u062b\u0648\u0631\u064a \u064a\u0639\u0644\u0646 \u0645\u0642\u062a\u0644"
+  },
+  {
+    "timestamp": "2026-04-05T09:07:51.403980+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US x Iran ceasefire before Oil hits $120?",
+    "score": 11
+  },
+  {
+    "timestamp": "2026-04-05T09:13:59.481629+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "**Iran is using North Korean weapons against Israel, US, expert tells Fox News - report**\n\n\"North Ko",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-05T09:38:46.983012+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0639\u0627\u062c\u0644 | \u062d\u0632\u0628 \u0627\u0644\u0644\u0647: \u0627\u0633\u062a\u0647\u062f\u0641\u0646\u0627 \u0628\u0631\u0634\u0642\u0629 \u0635\u0627\u0631\u0648\u062e\u064a\u0629 \u0645\u0648\u0642\u0639 \u0643\u0641\u0631\u0633\u0648\u0644\u062f"
+  },
+  {
+    "timestamp": "2026-04-05T10:22:07.850346+00:00",
+    "monitor": "newbet",
+    "type": "NEW_BET",
+    "market": "Will the Iranian regime fall by June 30?",
+    "score": 10
+  },
+  {
+    "timestamp": "2026-04-05T10:27:44.138237+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: A short while ago, the IDF identified missiles launched from Iran toward the territory of the S",
+    "position": "US forces enter Iran by April 30?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-05T10:32:10.831014+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "US pilot from downed F-15 plane rescued in Iran: What we know\n.\nThe second pilot whose F-15E jet fel",
+    "position": "US forces enter Iran by December 31?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-05T10:41:01.541903+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "geopolitical",
+    "sources": 5,
+    "headline": "**\ud83d\udd39****\u0635\u0648\u0627\u0631\u064a\u062e \u0645\u0646 \u0627\u064a\u0631\u0627\u0646 \u062a\u0633\u062a\u0647\u062f\u0641 \u0628\u0626\u0631 \u0627\u0644\u0633\u0628\u0639\n****\ud83d\udd39****\ud83d\udd0e**** \u0648\u0635\u0641\u0627\u0631\u0627\u062a \u0627\u0644\u0627\u0646\u0630\u0627\u0631 \u062a\u062f\u0648\u064a**\nhttps://t.me/+tQHLyywT"
+  },
+  {
+    "timestamp": "2026-04-05T11:41:31.023764+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0627\u0644\u062d\u0631\u0633 \u0627\u0644\u062b\u0648\u0631\u064a \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a: \u0627\u0633\u062a\u0647\u062f\u0641\u0646\u0627 \u0645\u0646\u0634\u0622\u062a \u0627\u0644\u0628\u062a\u0631\u0648\u0643\u064a\u0645\u0627\u0648\u064a\u0627\u062a \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629 \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629 \u0648\u062d\u0642\u0642\u0646\u0627 \u0625\u0635\u0627\u0628\u0627\u062a \u0643\u0628\u064a\u0631\u0629"
+  },
+  {
+    "timestamp": "2026-04-05T12:11:30.349039+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "**Hezbollah rockets targeting Israel hit at least 165 UNIFIL positions in southern Lebanon, IDF says",
+    "position": "Trump announces end of military operations against Iran by April 30th?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-05T13:04:53.907872+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 13,
+    "category": "geopolitical",
+    "sources": 15,
+    "headline": "\u0639\u0627\u062c\u0644 | \u062a\u0631\u0645\u0628 \u0639\u0646 \u0625\u064a\u0631\u0627\u0646: \u0633\u064a\u0643\u0648\u0646 \u064a\u0648\u0645 \u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621 \u064a\u0648\u0645 \u0645\u062d\u0637\u0627\u062a \u0627\u0644\u0643\u0647\u0631\u0628\u0627\u0621 \u0648\u064a\u0648\u0645 \u0627\u0644\u062c\u0633\u0648\u0631 \u0648\u0643\u0644 \u0630\u0644\u0643 \u0641\u064a \u064a\u0648\u0645 \u0648\u0627\u062d\u062f\n\ud83d\udccc\u0627\u0641\u062a\u062d\u0648\u0627 "
+  },
+  {
+    "timestamp": "2026-04-05T13:07:19.469881+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "JD Vance diplomatic meeting with Iran by April 30?",
+    "score": 15
+  },
+  {
+    "timestamp": "2026-04-05T13:49:15.358798+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "**As Iran war enters 6th week, escalation looks the most likely scenario**\n\nTrump's talks don't seem",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-05T14:17:31.635347+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0644\u0628\u0646\u0627\u0646\u064a \u064a\u0644\u0639\u0646 \u0627\u0633\u062a\u0634\u0647\u0627\u062f \u0627\u0644\u0639\u0631\u064a\u0641 \u062d\u0633\u064a\u0646 \u0646\u062d\u0644\u0647 \u062c\u0631\u0627\u0621 \u063a\u0627\u0631\u0629 \u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629 \u0639\u0644\u0649 \u0628\u0644\u062f\u0629 \u0643\u0641\u0631\u062d\u062a\u0649 \u0628\u0645\u062f\u064a\u0646\u0629 \u0635\u064a\u062f\u0627"
+  },
+  {
+    "timestamp": "2026-04-05T15:07:23.306208+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will Israel launch a ground operation in Iran by April 30, 2026?",
+    "score": 13
+  },
+  {
+    "timestamp": "2026-04-05T15:17:55.295176+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "#\u0639\u0627\u062c\u0644 | \u0645\u0631\u0627\u0633\u0644 \u0627\u0644\u062a\u0644\u0641\u0632\u064a\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a: \u062a\u0641\u0639\u064a\u0644 \u0635\u0641\u0627\u0631\u0627\u062a \u0627\u0644\u0625\u0646\u0630\u0627\u0631 \u0641\u064a \u062d\u064a\u0641\u0627 \u0648\u0634\u0645\u0627\u0644 \u0625\u0633\u0631\u0627\u0626\u064a\u0644 \u0628\u0639\u062f \u0625\u0637\u0644\u0627\u0642 \u0635\u0648\u0627\u0631\u064a\u062e \u0645\u0646 \u0625\u064a\u0631\u0627\u0646"
+  },
+  {
+    "timestamp": "2026-04-05T17:21:28.356234+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: **IDF Chief of the General Staff during a situational assessment in southern Lebanon: \u201cOver 1,0",
+    "position": "Israeli forces cross the Litani River by June 30?",
+    "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-05T17:46:41.189785+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 7,
+    "category": "oil",
+    "sources": 1,
+    "headline": "OPEC+ agrees to hike oil output, warns of slow recovery after attacks\n.\nThe rise is largely symbolic"
+  },
+  {
+    "timestamp": "2026-04-05T17:47:10.286480+00:00",
+    "monitor": "news_crossref",
+    "type": "POSITION_MATCH",
+    "position": "Will the Kharg Island oil terminal be hit by April 30?"
+  },
+  {
+    "timestamp": "2026-04-05T18:11:17.147478+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 13,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0639\u0627\u062c\u0644 | \u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a\u0629: \u0639\u0631\u0627\u0642\u062c\u064a \u0628\u062d\u062b \u0647\u0627\u062a\u0641\u064a\u0627 \u0645\u0639 \u0646\u0638\u064a\u0631\u0647 \u0627\u0644\u0631\u0648\u0633\u064a \u0627\u0644\u062a\u0637\u0648\u0631\u0627\u062a \u0627\u0644\u0625\u0642\u0644\u064a\u0645\u064a\u0629 \u0648\u0627\u0644\u062f\u0648\u0644\u064a\u0629 \u0648\u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0627"
+  }
+]
