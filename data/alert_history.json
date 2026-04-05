@@ -591,5 +591,14 @@
     "type": "SCHEDULED_BET",
     "market": "Will Reza Pahlavi enter Iran by June 30?",
     "score": 11
+  },
+  {
+    "timestamp": "2026-04-05T21:57:53.723518+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 9,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0645\u0631\u0627\u0633\u0644 \u0627\u0644\u062a\u0644\u0641\u0632\u064a\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a: \u063a\u0627\u0631\u0629 \u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629 \u0639\u0644\u0649 \u0634\u0642\u0629 \u0641\u064a \u062a\u0644\u0627\u0644 \u0639\u064a\u0646 \u0633\u0639\u0627\u062f\u0629 \u0628\u0628\u0644\u062f\u0629 \u0627\u0644\u0645\u0646\u0635\u0648\u0631\u064a\u0629 \u0641\u064a \u0645\u062d\u0627\u0641\u0638\u0629 \u062c\u0628\u0644 \u0644\u0628\u0646\u0627\u0646"
   }
 ]
