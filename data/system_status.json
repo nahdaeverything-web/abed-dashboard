@@ -8,8 +8,8 @@
     "status": "running",
     "mode": "auto",
     "positions_tracked": 21,
-    "cycle_number": 1967,
-    "last_updated": "2026-04-05T22:26:34.117260+00:00"
+    "cycle_number": 1972,
+    "last_updated": "2026-04-05T22:34:16.397254+00:00"
   },
   "whale_monitor": {
     "status": "completed",
@@ -19,13 +19,13 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 1956800,
+    "pid": 1957233,
     "status": "running",
     "mode": "auto",
-    "messages_checked": 2,
+    "messages_checked": 1,
     "clusters_formed": 1,
     "analyst_calls": 0,
-    "last_updated": "2026-04-05T22:26:29.726952+00:00"
+    "last_updated": "2026-04-05T22:34:00.992364+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
@@ -60,7 +60,7 @@
     "status": "completed",
     "alerts_processed": 33,
     "trend": "STABLE",
-    "positions_with_signals": 6,
-    "last_updated": "2026-04-05T22:00:02.054670+00:00"
+    "positions_with_signals": 5,
+    "last_updated": "2026-04-05T22:30:01.855116+00:00"
   }
 }
