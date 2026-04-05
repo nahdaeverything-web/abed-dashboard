@@ -533,11 +533,19 @@ async function loadDiscoverMarkets() {
     events.forEach(ev => {
       if (ev.markets) {
         ev.markets.forEach(m => {
+          let yesPrice = 0, noPrice = 0;
+          try {
+            if (m.outcomePrices) {
+              const prices = JSON.parse(m.outcomePrices);
+              yesPrice = parseFloat(prices[0]) || 0;
+              noPrice = parseFloat(prices[1]) || 0;
+            }
+          } catch(e) { yesPrice = parseFloat(m.bestBid || m.lastTradePrice || 0); noPrice = 1 - yesPrice; }
           allMarkets.push({
             question: m.question || ev.title,
-            yes: parseFloat(m.outcomePrices?.split(",")[0] || m.bestAsk || 0),
-            no: parseFloat(m.outcomePrices?.split(",")[1] || 0),
-            volume: parseFloat(m.volume24hr || m.volumeNum || 0),
+            yes: yesPrice,
+            no: noPrice,
+            volume: parseFloat(ev.volume24hr || m.volume24hr || m.volumeNum || 0),
             endDate: m.endDate || ev.endDate,
             category: (ev.tags || []).map(t => t.label || t).join(",").toLowerCase(),
             slug: m.slug || ev.slug,
