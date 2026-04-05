@@ -526,7 +526,7 @@ function alertClass(type) {
 
 async function loadDiscoverMarkets() {
   try {
-    const res = await fetch(`${GAMMA_API}/events?limit=30&active=true&closed=false&order=volume24hr&ascending=false`);
+    const res = await fetch(`${DATA_BASE}/trending_markets.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const events = await res.json();
     allMarkets = [];
