@@ -155,7 +155,11 @@
       "خاتم الأنبياء",
       "الوكالة الذرية",
       "رسوم جمركية",
-      "حرب تجارية"
+      "حرب تجارية",
+      "حزب الله",
+      "مسيرة",
+      "محطة",
+      "حيفا"
     ],
     "geo_he": [
       "הפסקת אש",
@@ -258,7 +262,10 @@
       "steel infrastructure",
       "liberation day",
       "Khatam al-Anbiya",
-      "Araghchi"
+      "Araghchi",
+      "Kuwait",
+      "Kharg Island",
+      "power plant"
     ],
     "oil_en": [
       "OPEC",
@@ -514,7 +521,10 @@
       "aluminum",
       "aluminium",
       "Khatam al-Anbiya",
-      "Araghchi"
+      "Araghchi",
+      "Kuwait",
+      "Kharg Island",
+      "power plant"
     ],
     "iran_bucket_en": [
       "iran",
@@ -545,7 +555,9 @@
       "Araghchi",
       "Khatam al-Anbiya",
       "aluminum",
-      "aluminium"
+      "aluminium",
+      "Kuwait",
+      "power plant"
     ]
   },
   "schedules": {
