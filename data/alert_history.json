@@ -608,5 +608,13 @@
     "headline": "[**WTI rises to near $105.00 as Trump threatens to hit Iran infrastructure**](https://fxstreet.page.",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-05T23:10:29.868982+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "After 14 hours and a broken signal: Inside the dramatic rescue of a US navigator in Iran\nhttps://ift",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
   }
 ]
