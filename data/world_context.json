@@ -1,29 +1,29 @@
 {
-    "last_updated": "2026-04-05T20:30:01.683603+00:00",
-    "alerts_24h": 29,
-    "alerts_last_6h": 9,
+    "last_updated": "2026-04-05T21:00:01.436862+00:00",
+    "alerts_24h": 31,
+    "alerts_last_6h": 11,
     "alerts_previous_6h": 13,
     "trend_direction": "STABLE",
     "alerts_by_type": {
-        "POSITION_ALERT": 11,
-        "NEWS_SIGNAL": 12,
+        "POSITION_ALERT": 12,
+        "NEWS_SIGNAL": 13,
         "SCHEDULED_BET": 4,
         "NEW_BET": 1,
         "POSITION_MATCH": 1
     },
     "category_breakdown": {
-        "geopolitical": 11,
+        "geopolitical": 12,
         "oil": 1
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 10.5,
+        "avg": 10.6,
         "max": 13,
-        "count": 12
+        "count": 13
     },
     "position_signals": {
         "US x Iran ceasefire by May 31? Yes": {
-            "signals_12h": 3,
+            "signals_12h": 4,
             "signal_activity": "HIGH"
         },
         "US forces enter Iran by April 30? Yes": {
