@@ -8,8 +8,8 @@
     "status": "running",
     "mode": "auto",
     "positions_tracked": 29,
-    "cycle_number": 2207,
-    "last_updated": "2026-04-06T04:27:21.251458+00:00"
+    "cycle_number": 2211,
+    "last_updated": "2026-04-06T04:33:34.184526+00:00"
   },
   "whale_monitor": {
     "status": "completed",
@@ -61,6 +61,6 @@
     "alerts_processed": 41,
     "trend": "STABLE",
     "positions_with_signals": 3,
-    "last_updated": "2026-04-06T04:00:01.729970+00:00"
+    "last_updated": "2026-04-06T04:30:02.422451+00:00"
   }
 }

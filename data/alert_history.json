@@ -667,5 +667,13 @@
     "category": "geopolitical",
     "sources": 2,
     "headline": "\u0639\u0627\u062c\u0644 | \u0648\u0633\u0627\u0626\u0644 \u0625\u0639\u0644\u0627\u0645 \u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629: \u062f\u0645\u0627\u0631 \u0643\u0628\u064a\u0631 \u0648\u0623\u0636\u0631\u0627\u0631 \u062c\u0633\u064a\u0645\u0629 \u0641\u064a \u0639\u062f\u062f \u0645\u0646 \u0645\u0646\u0627\u0637\u0642 \u062d\u064a\u0641\u0627 \u0625\u062b\u0631 \u0647\u062c\u0648\u0645 \u0635\u0627\u0631\u0648\u062e\u064a \u0625\u064a\u0631\u0627\u0646\u064a"
+  },
+  {
+    "timestamp": "2026-04-06T04:33:34.183386+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**EUR/USD inches higher above 1.1500 amid hopes on US-Iran ceasefire talks **](https://fxstreet.pag",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
   }
 ]
