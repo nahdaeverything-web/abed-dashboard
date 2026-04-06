@@ -856,5 +856,13 @@
     "headline": "IDF: **The IDF completed a day of intensive strikes on additional key infrastructure in Iran\n**\nAlon",
     "position": "US forces enter Iran by April 30?",
     "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-06T19:01:39.507395+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**Forex Today: US Dollar slips on Iran ceasefire hopes as Oil stays elevated and Gold steadies**](h",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
   }
 ]
