@@ -1,29 +1,29 @@
 {
-    "last_updated": "2026-04-06T07:30:01.442281+00:00",
-    "alerts_24h": 44,
-    "alerts_last_6h": 13,
-    "alerts_previous_6h": 9,
-    "trend_direction": "STABLE",
+    "last_updated": "2026-04-06T08:00:01.474969+00:00",
+    "alerts_24h": 46,
+    "alerts_last_6h": 15,
+    "alerts_previous_6h": 8,
+    "trend_direction": "ACCELERATING",
     "alerts_by_type": {
-        "NEWS_SIGNAL": 18,
+        "NEWS_SIGNAL": 19,
         "SCHEDULED_BET": 7,
-        "POSITION_ALERT": 17,
+        "POSITION_ALERT": 18,
         "NEW_BET": 1,
         "POSITION_MATCH": 1
     },
     "category_breakdown": {
-        "geopolitical": 17,
+        "geopolitical": 18,
         "oil": 1
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 10.9,
+        "avg": 10.8,
         "max": 14,
-        "count": 18
+        "count": 19
     },
     "position_signals": {
         "US x Iran ceasefire by May 31? Yes": {
-            "signals_12h": 8,
+            "signals_12h": 9,
             "signal_activity": "HIGH"
         },
         "Will the Iranian regime fall before 2027? Yes": {
