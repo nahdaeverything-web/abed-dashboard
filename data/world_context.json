@@ -1,7 +1,7 @@
 {
-    "last_updated": "2026-04-06T00:00:01.789469+00:00",
+    "last_updated": "2026-04-06T00:30:01.599310+00:00",
     "alerts_24h": 36,
-    "alerts_last_6h": 11,
+    "alerts_last_6h": 10,
     "alerts_previous_6h": 10,
     "trend_direction": "STABLE",
     "alerts_by_type": {
@@ -25,14 +25,6 @@
         "US x Iran ceasefire by May 31? Yes": {
             "signals_12h": 5,
             "signal_activity": "HIGH"
-        },
-        "Trump announces end of military operations against Iran by April 30th? Yes": {
-            "signals_12h": 1,
-            "signal_activity": "LOW"
-        },
-        "Trump announces end of military operations against Iran by April 15th? No": {
-            "signals_12h": 1,
-            "signal_activity": "LOW"
         },
         "Israeli forces cross the Litani River by June 30? Yes": {
             "signals_12h": 1,
