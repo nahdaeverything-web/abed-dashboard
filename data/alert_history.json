@@ -740,5 +740,13 @@
     "headline": "[**Dow Jones futures recover recent losses as reports suggest US-Iran ceasefire talks**](https://fxs",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-06T07:43:34.503758+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**Iran acknowledges receiving ceasefire proposal through Pakistan - Reuters**](https://fxstreet.pag",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
   }
 ]
