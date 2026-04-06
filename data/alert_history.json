@@ -675,5 +675,13 @@
     "headline": "[**EUR/USD inches higher above 1.1500 amid hopes on US-Iran ceasefire talks **](https://fxstreet.pag",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-06T04:38:17.235233+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**USD/CHF holds gains above 0.8000 despite reports of US-Iran ceasefire talks**](https://fxstreet.p",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BULLISH"
   }
 ]
