@@ -946,5 +946,14 @@
     "headline": "[**Gold rebounds as traders watch Trump\u2019s Iran deadline  **](https://www.fxstreet.com/news/gold-rebo",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-06T23:43:13.246830+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": ".\u0646\u064a\u0648\u064a\u0648\u0631\u0643 \u062a\u0627\u064a\u0645\u0632 \u0639\u0646 \u0645\u0633\u0624\u0648\u0644\u064a\u0646 \u0625\u064a\u0631\u0627\u0646\u064a\u064a\u0646:\n. \u0645\u0642\u062a\u0631\u062d\u0646\u0627 \u064a\u0646\u0635 \u0639\u0644\u0649 \u0636\u0645\u0627\u0646\u0627\u062a \u0628\u0639\u062f\u0645 \u062a\u0639\u0631\u0636\u0646\u0627 \u0644\u0644\u0647\u062c\u0648\u0645 \u0645\u062c\u062f\u062f\u0627\n. \u0645\u0642\u062a\u0631\u062d\u0646\u0627 \u064a\u062a\u0636\u0645"
   }
 ]
