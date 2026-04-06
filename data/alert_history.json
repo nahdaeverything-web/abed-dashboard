@@ -881,5 +881,13 @@
     "headline": "**Trump says US has plan to destroy every bridge and power plant in Iran within hours tomorrow night",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-06T20:39:49.637352+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "Trump: \u2018Every power plant in Iran will be out of business in four hours\u2019 if no deal by deadline\nhttp",
+    "position": "Will Trump say \"Make a Deal\" during Monday news conference?",
+    "verdict": "BULLISH"
   }
 ]
