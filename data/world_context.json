@@ -1,11 +1,11 @@
 {
-    "last_updated": "2026-04-06T04:30:02.159032+00:00",
-    "alerts_24h": 41,
-    "alerts_last_6h": 8,
-    "alerts_previous_6h": 11,
+    "last_updated": "2026-04-06T05:00:01.598712+00:00",
+    "alerts_24h": 43,
+    "alerts_last_6h": 9,
+    "alerts_previous_6h": 12,
     "trend_direction": "STABLE",
     "alerts_by_type": {
-        "POSITION_ALERT": 15,
+        "POSITION_ALERT": 17,
         "NEWS_SIGNAL": 18,
         "SCHEDULED_BET": 6,
         "NEW_BET": 1,
@@ -23,7 +23,7 @@
     },
     "position_signals": {
         "US x Iran ceasefire by May 31? Yes": {
-            "signals_12h": 4,
+            "signals_12h": 6,
             "signal_activity": "HIGH"
         },
         "Will the Iranian regime fall before 2027? Yes": {
