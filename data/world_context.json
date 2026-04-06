@@ -1,23 +1,43 @@
 {
-    "last_updated": "2026-04-06T17:00:01.450495+00:00",
-    "alerts_24h": 34,
-    "alerts_last_6h": 0,
-    "alerts_previous_6h": 13,
+    "last_updated": "2026-04-06T17:30:01.453863+00:00",
+    "alerts_24h": 35,
+    "alerts_last_6h": 2,
+    "alerts_previous_6h": 11,
     "trend_direction": "DECLINING",
     "alerts_by_type": {
-        "POSITION_ALERT": 16,
-        "NEWS_SIGNAL": 13,
+        "NEWS_SIGNAL": 15,
         "POSITION_MATCH": 1,
+        "POSITION_ALERT": 15,
         "SCHEDULED_BET": 4
     },
     "category_breakdown": {
         "oil": 1,
-        "geopolitical": 12
+        "geopolitical": 14
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 11.2,
+        "avg": 11.4,
         "max": 14,
-        "count": 13
-    }
+        "count": 15
+    },
+    "position_signals": {
+        "US x Iran ceasefire by May 31? Yes": {
+            "signals_12h": 5,
+            "signal_activity": "HIGH"
+        },
+        "Will the U.S. invade Iran before 2027? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "Will the Iranian regime fall before 2027? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        },
+        "Will WTI Crude Oil (WTI) hit (HIGH) $120 in April? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
+        }
+    },
+    "open_positions": 21,
+    "total_deployed": 122.39
 }
