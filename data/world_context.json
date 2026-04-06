@@ -1,7 +1,7 @@
 {
-    "last_updated": "2026-04-06T01:30:01.506691+00:00",
+    "last_updated": "2026-04-06T02:00:01.880669+00:00",
     "alerts_24h": 37,
-    "alerts_last_6h": 9,
+    "alerts_last_6h": 8,
     "alerts_previous_6h": 10,
     "trend_direction": "STABLE",
     "alerts_by_type": {
@@ -23,7 +23,7 @@
     },
     "position_signals": {
         "US x Iran ceasefire by May 31? Yes": {
-            "signals_12h": 5,
+            "signals_12h": 4,
             "signal_activity": "HIGH"
         },
         "Israeli forces cross the Litani River by June 30? Yes": {
