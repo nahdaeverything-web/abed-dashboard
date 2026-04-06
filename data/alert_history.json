@@ -938,5 +938,13 @@
     "type": "SCHEDULED_BET",
     "market": "Will the Iranian regime fall by June 30?",
     "score": 14
+  },
+  {
+    "timestamp": "2026-04-06T23:12:18.039759+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**Gold rebounds as traders watch Trump\u2019s Iran deadline  **](https://www.fxstreet.com/news/gold-rebo",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
   }
 ]
