@@ -1,30 +1,34 @@
 {
-    "last_updated": "2026-04-06T03:00:02.078968+00:00",
-    "alerts_24h": 38,
-    "alerts_last_6h": 7,
-    "alerts_previous_6h": 11,
-    "trend_direction": "DECLINING",
+    "last_updated": "2026-04-06T03:30:01.658371+00:00",
+    "alerts_24h": 41,
+    "alerts_last_6h": 9,
+    "alerts_previous_6h": 10,
+    "trend_direction": "STABLE",
     "alerts_by_type": {
-        "POSITION_ALERT": 14,
-        "NEWS_SIGNAL": 17,
-        "SCHEDULED_BET": 5,
+        "POSITION_ALERT": 15,
+        "NEWS_SIGNAL": 18,
+        "SCHEDULED_BET": 6,
         "NEW_BET": 1,
         "POSITION_MATCH": 1
     },
     "category_breakdown": {
-        "geopolitical": 16,
+        "geopolitical": 17,
         "oil": 1
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 10.6,
-        "max": 13,
-        "count": 17
+        "avg": 10.8,
+        "max": 14,
+        "count": 18
     },
     "position_signals": {
         "US x Iran ceasefire by May 31? Yes": {
             "signals_12h": 4,
             "signal_activity": "HIGH"
+        },
+        "Will the Iranian regime fall before 2027? Yes": {
+            "signals_12h": 1,
+            "signal_activity": "LOW"
         },
         "Israeli forces cross the Litani River by June 30? Yes": {
             "signals_12h": 1,
