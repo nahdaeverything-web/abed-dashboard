@@ -840,5 +840,21 @@
     "category": "geopolitical",
     "sources": 3,
     "headline": "#\u0639\u0627\u062c\u0644 | \u0635\u0648\u0631 \u062d\u0635\u0631\u064a\u0629 \u0644\u0644\u062a\u0644\u0641\u0632\u064a\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a \u0644\u062a\u0639\u0627\u0645\u0644 \u0627\u0644\u0623\u062c\u0647\u0632\u0629 \u0627\u0644\u0623\u0645\u0646\u064a\u0629 \u0645\u0639 \u0634\u0638\u0627\u064a\u0627 \u0627\u0644\u0635\u0648\u0627\u0631\u064a\u062e \u0648\u0627\u0644\u0645\u0633\u064a\u0631\u0627\u062a \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a\u0629"
+  },
+  {
+    "timestamp": "2026-04-06T18:31:10.263147+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**Gold slips from $4,700 as Iran deal doubts boost oil, Dollar**](https://fxstreet.page.link/mcpkEj",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH (for the YES outcome)"
+  },
+  {
+    "timestamp": "2026-04-06T18:34:25.184752+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF: **The IDF completed a day of intensive strikes on additional key infrastructure in Iran\n**\nAlon",
+    "position": "US forces enter Iran by April 30?",
+    "verdict": "BULLISH"
   }
 ]
