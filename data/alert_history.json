@@ -757,5 +757,13 @@
     "category": "geopolitical",
     "sources": 5,
     "headline": "\ud83d\udccc\u0646\u0627\u0642\u0644\u062a\u0627 \u063a\u0627\u0632 \u0645\u0633\u0627\u0644 \u0642\u0637\u0631\u064a\u062a\u0627\u0646 \u062a\u062a\u062c\u0647\u0627\u0646 \u0644\u0639\u0628\u0648\u0631 \u0645\u0636\u064a\u0642 \u0647\u0631\u0645\u0632 \u0644\u0623\u0648\u0644 \u0645\u0631\u0629 \u0645\u0646\u0630 \u0627\u0646\u062f\u0644\u0627\u0639 \u0627\u0644\u062d\u0631\u0628\n\n-\"\u0627\u0644\u0636\u0639\u0627\u064a\u0646\" \u0648\"\u0631\u0634\u064a\u062f\u0629\" \u062a\u062a\u062d\u0631\u0643"
+  },
+  {
+    "timestamp": "2026-04-06T08:32:10.938564+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**\u00a0USD/JPY eases to 159.40 amid hopes of a peace deal in Iran**](https://fxstreet.page.link/6UXtGhY",
+    "position": "Will the U.S. invade Iran before 2027?",
+    "verdict": "BEARISH"
   }
 ]
