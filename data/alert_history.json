@@ -765,5 +765,13 @@
     "headline": "[**\u00a0USD/JPY eases to 159.40 amid hopes of a peace deal in Iran**](https://fxstreet.page.link/6UXtGhY",
     "position": "Will the U.S. invade Iran before 2027?",
     "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-06T08:42:54.170812+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "IDF:** In the heart of Tehran: the IDF eliminated the Head of Intelligence of the Islamic Revolution",
+    "position": "Will the Iranian regime fall before 2027?",
+    "verdict": "BULLISH"
   }
 ]
