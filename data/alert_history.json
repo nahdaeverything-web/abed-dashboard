@@ -1002,5 +1002,13 @@
     "headline": "[**Asian stocks trade mixed as Iran deadline and oil-driven Fed fears unsettle markets**](https://fx",
     "position": "US x Iran ceasefire by May 31?",
     "verdict": "BEARISH"
+  },
+  {
+    "timestamp": "2026-04-07T04:41:19.994586+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**WTI Price Forecast: Sits near $105.50; eyes four-week top as Trump's Iran deadline looms**](https",
+    "position": "Will WTI Crude Oil (WTI) hit (HIGH) $120 in April?",
+    "verdict": "BULLISH"
   }
 ]
