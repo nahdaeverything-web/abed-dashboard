@@ -1,13 +1,13 @@
 {
-    "last_updated": "2026-04-07T21:30:02.126076+00:00",
-    "alerts_24h": 27,
+    "last_updated": "2026-04-07T22:00:01.852238+00:00",
+    "alerts_24h": 25,
     "alerts_last_6h": 3,
     "alerts_previous_6h": 6,
     "trend_direction": "DECLINING",
     "alerts_by_type": {
-        "POSITION_ALERT": 8,
         "NEWS_SIGNAL": 11,
         "SCHEDULED_BET": 7,
+        "POSITION_ALERT": 6,
         "POSITION_UPDATE": 1
     },
     "category_breakdown": {
