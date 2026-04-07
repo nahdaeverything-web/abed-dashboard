@@ -994,5 +994,13 @@
     "type": "SCHEDULED_BET",
     "market": "Will Israel take military action in Gaza on April 6, 2026?",
     "score": 16
+  },
+  {
+    "timestamp": "2026-04-07T04:01:38.627647+00:00",
+    "monitor": "urgent_monitor",
+    "type": "POSITION_ALERT",
+    "headline": "[**Asian stocks trade mixed as Iran deadline and oil-driven Fed fears unsettle markets**](https://fx",
+    "position": "US x Iran ceasefire by May 31?",
+    "verdict": "BEARISH"
   }
 ]
