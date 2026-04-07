@@ -1097,5 +1097,14 @@
     "type": "SCHEDULED_BET",
     "market": "US obtains Iranian enriched uranium by May 31?",
     "score": 13
+  },
+  {
+    "timestamp": "2026-04-07T18:51:34.426208+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u0643\u0627\u0645\u064a\u0631\u0627 \u0627\u0644\u062a\u0644\u0641\u0632\u064a\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a \u062a\u0631\u0635\u062f \u0627\u0644\u062f\u0645\u0627\u0631 \u0641\u064a \u0645\u0646\u0632\u0644 \u0628\u0623\u0631\u0628\u064a\u0644 \u0639\u0642\u0628 \u0633\u0642\u0648\u0637 \u0645\u0633\u064a\u0651\u0631\u0629 \u0625\u064a\u0631\u0627\u0646\u064a\u0629 \u0639\u0644\u064a\u0647\u060c \u0645\u0627 \u0623\u0633\u0641\u0631 \u0639\u0646 \u0645\u0642\u062a\u0644 \u0634\u062e\u0635"
   }
 ]
