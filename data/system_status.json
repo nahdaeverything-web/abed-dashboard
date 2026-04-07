@@ -8,8 +8,8 @@
     "status": "running",
     "mode": "auto",
     "positions_tracked": 21,
-    "cycle_number": 306,
-    "last_updated": "2026-04-07T00:59:29.886638+00:00"
+    "cycle_number": 309,
+    "last_updated": "2026-04-07T01:03:59.984678+00:00"
   },
   "whale_monitor": {
     "status": "completed",
@@ -44,10 +44,10 @@
     "last_updated": "2026-04-03T21:59:26.221591+00:00"
   },
   "system": {
-    "memory_available_mb": 8121,
-    "swap_used_pct": 34,
+    "memory_available_mb": 7081,
+    "swap_used_pct": 33,
     "disk_free_gb": 48,
-    "last_updated": "2026-04-06T01:00:01.597148+00:00"
+    "last_updated": "2026-04-07T01:00:02.281877+00:00"
   },
   "newbet": {
     "status": "completed",
@@ -60,7 +60,7 @@
     "status": "completed",
     "alerts_processed": 40,
     "trend": "ACCELERATING",
-    "positions_with_signals": 2,
-    "last_updated": "2026-04-07T00:30:02.113601+00:00"
+    "positions_with_signals": 3,
+    "last_updated": "2026-04-07T01:00:02.469242+00:00"
   }
 }
