@@ -24,7 +24,7 @@
   },
   "urgent_monitor": {
     "_comment": "urgent_monitor.py — continuous loop, systemd service. HOT-RELOAD: config re-read every cycle.",
-    "mode": "auto",
+    "mode": "disabled",
     "sleep_seconds": 90,
     "position_refresh_cycles": 10,
     "overlap_min_shared_words": 2,
