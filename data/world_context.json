@@ -1,23 +1,23 @@
 {
-    "last_updated": "2026-04-07T06:00:01.684158+00:00",
-    "alerts_24h": 39,
+    "last_updated": "2026-04-07T06:30:01.227968+00:00",
+    "alerts_24h": 36,
     "alerts_last_6h": 9,
-    "alerts_previous_6h": 15,
+    "alerts_previous_6h": 14,
     "trend_direction": "DECLINING",
     "alerts_by_type": {
-        "POSITION_ALERT": 23,
-        "NEWS_SIGNAL": 12,
+        "POSITION_ALERT": 21,
+        "NEWS_SIGNAL": 11,
         "NEW_BET": 1,
         "SCHEDULED_BET": 3
     },
     "category_breakdown": {
-        "geopolitical": 12
+        "geopolitical": 11
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 11.1,
+        "avg": 11.2,
         "max": 13,
-        "count": 12
+        "count": 11
     },
     "position_signals": {
         "US x Iran ceasefire by May 31? Yes": {
