@@ -963,5 +963,12 @@
     "headline": "[**WTI edges higher above $103.50 as Trump intensifies Iran's infrastructure threats **](https://fxs",
     "position": "Will WTI Crude Oil (WTI) hit (HIGH) $120 in April?",
     "verdict": "BULLISH"
+  },
+  {
+    "timestamp": "2026-04-07T01:07:38.329303+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US-Iran nuclear deal by June 30?",
+    "score": 11
   }
 ]
