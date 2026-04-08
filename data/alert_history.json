@@ -1183,5 +1183,14 @@
     "type": "SCHEDULED_BET",
     "market": " Iran agrees to end enrichment of uranium by June 30?",
     "score": 12
+  },
+  {
+    "timestamp": "2026-04-08T06:57:04.440327+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 8,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629 \u0627\u0644\u0628\u062d\u0631\u064a\u0646\u064a\u0629: \u062c\u0631\u064a\u062d\u0627\u0646 \u062c\u0631\u0627\u0621 \u0634\u0638\u0627\u064a\u0627 \u0646\u0627\u062c\u0645\u0629 \u0639\u0646 \u0627\u0639\u062a\u0631\u0627\u0636 \u0645\u0633\u064a\u0651\u0631\u0629 \u0625\u064a\u0631\u0627\u0646\u064a\u0629\nhttps://www.royanews.tv/news/37"
   }
 ]
