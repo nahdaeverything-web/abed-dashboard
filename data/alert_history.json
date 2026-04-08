@@ -1208,5 +1208,12 @@
     "type": "SCHEDULED_BET",
     "market": "US forces enter Iran by December 31?",
     "score": 17
+  },
+  {
+    "timestamp": "2026-04-08T15:08:27.636288+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will the next diplomatic US-Iran meeting be in Oman?",
+    "score": 11
   }
 ]
