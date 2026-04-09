@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-04-09T07:30:01.827530+00:00",
+    "last_updated": "2026-04-09T08:00:01.573095+00:00",
     "alerts_24h": 16,
     "alerts_last_6h": 6,
-    "alerts_previous_6h": 3,
+    "alerts_previous_6h": 2,
     "trend_direction": "ACCELERATING",
     "alerts_by_type": {
         "NEWS_SIGNAL": 10,
