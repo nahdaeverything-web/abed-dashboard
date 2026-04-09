@@ -1292,5 +1292,12 @@
     "category": "geopolitical",
     "sources": 2,
     "headline": "#\u0639\u0627\u062c\u0644 | \u0627\u0644\u0642\u0646\u0627\u0629 12 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629: \n\ud83d\udccc \u0627\u0639\u062a\u0631\u0627\u0636 3 \u0635\u0648\u0627\u0631\u064a\u062e \u0623\u0637\u0644\u0642\u062a \u0645\u0646 \u0644\u0628\u0646\u0627\u0646 \u0628\u0627\u062a\u062c\u0627\u0647 \u0623\u0641\u064a\u0641\u064a\u0645 \u0648\u0627\u0644\u0645\u0646\u0627\u0631\u0629 \u0648\u0645\u0631\u063a\u0644\u064a\u0648\u062a \u062e\u0644\u0627"
+  },
+  {
+    "timestamp": "2026-04-09T05:07:57.579549+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will the next diplomatic US-Iran meeting be in Oman?",
+    "score": 13
   }
 ]
