@@ -1577,5 +1577,11 @@
     "type": "NEW_BET",
     "market": "Military action against Iran ends on April 10, 2026?",
     "score": 0
+  },
+  {
+    "timestamp": "2026-04-10T15:50:03.465445+00:00",
+    "monitor": "update",
+    "type": "POSITION_UPDATE",
+    "positions_reviewed": 21
   }
 ]
