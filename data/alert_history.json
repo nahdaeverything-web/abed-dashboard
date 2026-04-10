@@ -1514,5 +1514,12 @@
     "category": "geopolitical",
     "sources": 2,
     "headline": "\u05d1\u05e8\u05e6\u05d5\u05e2\u05ea \u05e2\u05d6\u05d4: \u05e6\u05d4\"\u05dc \u05d7\u05d9\u05e1\u05dc \u05e9\u05e0\u05d9 \u05de\u05d7\u05d1\u05dc\u05d9\u05dd \u05e9\u05ea\u05db\u05e0\u05e0\u05d5 \u05dc\u05d1\u05e6\u05e2 \u05de\u05ea\u05d5\u05d5\u05d9 \u05d8\u05e8\u05d5\u05e8 \u05e0\u05d2\u05d3 \u05db\u05d5\u05d7\u05d5\u05ea \u05e6\u05d4\"\u05dc \u05d1\u05d8\u05d5\u05d5\u05d7 \u05d4\u05d6\u05de\u05df \u05d4\u05de\u05d9\u05d9\u05d3\u05d9\n\n\u05d1\u05d3\u05e8\u05d5\u05dd \u05e8\u05e6\u05d5\u05e2"
+  },
+  {
+    "timestamp": "2026-04-10T11:07:32.296443+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US x Iran permanent peace deal by April 22, 2026?",
+    "score": 11
   }
 ]
