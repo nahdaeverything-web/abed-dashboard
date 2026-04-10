@@ -1546,5 +1546,20 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran permanent peace deal by May 31, 2026?",
     "score": 13
+  },
+  {
+    "timestamp": "2026-04-10T13:48:06.115132+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "\u0644\u062d\u0638\u0629 \u0633\u0642\u0648\u0637 \u0635\u0627\u0631\u0648\u062e \u0644\u062d\u0632\u0628 \u0627\u0644\u0644\u0647 \u0641\u064a \u0635\u0641\u062f\nhttps://t.me/+tQHLyywTho82Njky"
+  },
+  {
+    "timestamp": "2026-04-10T13:48:37.378826+00:00",
+    "monitor": "news_crossref",
+    "type": "POSITION_MATCH",
+    "position": "Strait of Hormuz traffic returns to normal by end of May?"
   }
 ]
