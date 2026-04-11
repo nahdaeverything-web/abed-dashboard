@@ -19,20 +19,20 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 2559731,
+    "pid": 2560146,
     "status": "running",
     "mode": "auto",
-    "messages_checked": 3,
+    "messages_checked": 2,
     "clusters_formed": 1,
     "analyst_calls": 0,
-    "last_updated": "2026-04-11T21:03:49.716225+00:00"
+    "last_updated": "2026-04-11T21:09:50.825097+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
     "mode": "auto",
     "candidates_found": 5,
     "alert_sent": false,
-    "last_updated": "2026-04-11T19:07:52.909687+00:00"
+    "last_updated": "2026-04-11T21:08:14.039687+00:00"
   },
   "volume_radar": {
     "status": "completed",
