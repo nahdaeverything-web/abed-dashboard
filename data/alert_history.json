@@ -1956,5 +1956,11 @@
     "type": "NEW_BET",
     "market": "Will the Iranian regime fall by June 30?",
     "score": 0
+  },
+  {
+    "timestamp": "2026-04-12T15:57:31.937872+00:00",
+    "monitor": "update",
+    "type": "POSITION_UPDATE",
+    "positions_reviewed": 18
   }
 ]
