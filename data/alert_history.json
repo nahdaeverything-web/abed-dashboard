@@ -1995,5 +1995,12 @@
     "monitor": "news_crossref",
     "type": "POSITION_MATCH",
     "position": "Strait of Hormuz traffic returns to normal by end of April?"
+  },
+  {
+    "timestamp": "2026-04-12T19:07:45.140704+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US x Iran permanent peace deal by April 22, 2026?",
+    "score": 13
   }
 ]
