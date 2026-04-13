@@ -2138,5 +2138,12 @@
     "monitor": "news_crossref",
     "type": "POSITION_MATCH",
     "position": "Strait of Hormuz traffic returns to normal by end of April?"
+  },
+  {
+    "timestamp": "2026-04-13T10:11:56.165468+00:00",
+    "monitor": "newbet",
+    "type": "NEW_BET",
+    "market": "Will the Iranian regime fall by June 30?",
+    "score": 9
   }
 ]

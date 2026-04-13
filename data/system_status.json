@@ -19,13 +19,13 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 2690953,
+    "pid": 2691437,
     "status": "running",
     "mode": "auto",
-    "messages_checked": 2,
+    "messages_checked": 3,
     "clusters_formed": 1,
-    "analyst_calls": 0,
-    "last_updated": "2026-04-13T10:08:23.561394+00:00"
+    "analyst_calls": 1,
+    "last_updated": "2026-04-13T10:14:48.479673+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
@@ -52,9 +52,9 @@
   "newbet": {
     "status": "completed",
     "market_scored": "Will the Iranian regime fall by June 30?",
-    "score": 0,
+    "score": 9,
     "alert_sent": true,
-    "last_updated": "2026-04-12T15:13:32.138770+00:00"
+    "last_updated": "2026-04-13T10:11:56.167847+00:00"
   },
   "context_builder": {
     "status": "completed",
