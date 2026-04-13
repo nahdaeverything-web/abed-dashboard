@@ -1,14 +1,14 @@
 {
-    "last_updated": "2026-04-13T10:00:02.043313+00:00",
-    "alerts_24h": 32,
-    "alerts_last_6h": 9,
-    "alerts_previous_6h": 5,
+    "last_updated": "2026-04-13T10:30:01.165321+00:00",
+    "alerts_24h": 33,
+    "alerts_last_6h": 11,
+    "alerts_previous_6h": 4,
     "trend_direction": "ACCELERATING",
     "alerts_by_type": {
-        "NEWS_SIGNAL": 17,
         "SCHEDULED_BET": 10,
+        "NEWS_SIGNAL": 17,
         "POSITION_UPDATE": 2,
-        "NEW_BET": 1,
+        "NEW_BET": 2,
         "POSITION_MATCH": 2
     },
     "category_breakdown": {
