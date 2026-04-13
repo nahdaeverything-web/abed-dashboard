@@ -2059,5 +2059,12 @@
     "type": "SCHEDULED_BET",
     "market": "Trump announces US x Iran ceasefire end by April 21, 2026?",
     "score": 13
+  },
+  {
+    "timestamp": "2026-04-13T03:07:40.164527+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will the US x Iran ceasefire be extended by April 21, 2026?",
+    "score": 11
   }
 ]
