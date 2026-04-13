@@ -2220,5 +2220,14 @@
     "category": "geopolitical",
     "sources": 3,
     "headline": "[**USD/JPY holds onto light gain as Hormuz closure fuels safe-haven demand**](https://fxstreet.page."
+  },
+  {
+    "timestamp": "2026-04-13T16:52:55.329434+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 12,
+    "category": "geopolitical",
+    "sources": 5,
+    "headline": "\u0639\u0627\u062c\u0644 | \u062a\u0631\u0645\u0628: \u0623\u0631\u064a\u062f \u0623\u0646 \u0623\u0631\u0649 \u0646\u0647\u0627\u064a\u0629 \u0644\u0644\u062d\u0631\u0628 \u0641\u064a \u0625\u064a\u0631\u0627\u0646"
   }
 ]
