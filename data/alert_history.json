@@ -2211,5 +2211,14 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran permanent peace deal by April 30, 2026?",
     "score": 14
+  },
+  {
+    "timestamp": "2026-04-13T15:52:13.196113+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "[**USD/JPY holds onto light gain as Hormuz closure fuels safe-haven demand**](https://fxstreet.page."
   }
 ]
