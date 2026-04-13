@@ -2229,5 +2229,12 @@
     "category": "geopolitical",
     "sources": 5,
     "headline": "\u0639\u0627\u062c\u0644 | \u062a\u0631\u0645\u0628: \u0623\u0631\u064a\u062f \u0623\u0646 \u0623\u0631\u0649 \u0646\u0647\u0627\u064a\u0629 \u0644\u0644\u062d\u0631\u0628 \u0641\u064a \u0625\u064a\u0631\u0627\u0646"
+  },
+  {
+    "timestamp": "2026-04-13T17:07:44.628519+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Trump announces US x Iran ceasefire end by April 21, 2026?",
+    "score": 14
   }
 ]
