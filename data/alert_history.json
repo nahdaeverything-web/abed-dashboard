@@ -2236,5 +2236,14 @@
     "type": "SCHEDULED_BET",
     "market": "Trump announces US x Iran ceasefire end by April 21, 2026?",
     "score": 14
+  },
+  {
+    "timestamp": "2026-04-13T17:58:28.413445+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 11,
+    "category": "geopolitical",
+    "sources": 3,
+    "headline": "\u200f\u2b55\ufe0f \u0648\u0627\u0634\u0646\u0637\u0646 \u062a\u0642\u062a\u0631\u062d \u0648\u0642\u0641 \u062a\u062e\u0635\u064a\u0628 \u0627\u0644\u064a\u0648\u0631\u0627\u0646\u064a\u0648\u0645 20 \u0639\u0627\u0645\u0627\u064b \u062e\u0644\u0627\u0644 \u0645\u0641\u0627\u0648\u0636\u0627\u062a \u0625\u0633\u0644\u0627\u0645 \u0622\u0628\u0627\u062f\n\u23f3 \u0637\u0647\u0631\u0627\u0646 \u062a\u0631\u062f \u0628\u0645\u0642\u062a\u0631\u062d \u0623\u0642\u0635\u0631 (10 \u0633"
   }
 ]
