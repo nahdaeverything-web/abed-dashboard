@@ -1,12 +1,12 @@
 {
-    "last_updated": "2026-04-14T08:00:01.362105+00:00",
+    "last_updated": "2026-04-14T08:30:01.267534+00:00",
     "alerts_24h": 32,
-    "alerts_last_6h": 6,
-    "alerts_previous_6h": 6,
+    "alerts_last_6h": 7,
+    "alerts_previous_6h": 5,
     "trend_direction": "STABLE",
     "alerts_by_type": {
-        "NEWS_SIGNAL": 18,
         "SCHEDULED_BET": 11,
+        "NEWS_SIGNAL": 18,
         "POSITION_MATCH": 2,
         "NEW_BET": 1
     },
