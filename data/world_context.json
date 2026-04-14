@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-04-14T02:30:01.618718+00:00",
+    "last_updated": "2026-04-14T03:00:02.174259+00:00",
     "alerts_24h": 32,
     "alerts_last_6h": 5,
-    "alerts_previous_6h": 10,
+    "alerts_previous_6h": 9,
     "trend_direction": "DECLINING",
     "alerts_by_type": {
         "SCHEDULED_BET": 11,
