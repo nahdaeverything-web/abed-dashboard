@@ -2627,5 +2627,12 @@
     "category": "geopolitical",
     "sources": 2,
     "headline": "\u0639\u0627\u062c\u0644 | \u0648\u0643\u0627\u0644\u0629 \u0627\u0644\u0623\u0646\u0628\u0627\u0621 \u0627\u0644\u0644\u0628\u0646\u0627\u0646\u064a\u0629: \u0634\u0647\u064a\u062f \u0648\u062c\u0631\u064a\u062d \u0641\u064a \u063a\u0627\u0631\u0629 \u0644\u0645\u0633\u064a\u0631\u0629 \u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0629 \u0639\u0644\u0649 \u0628\u0644\u062f\u0629 \u062d\u0627\u0631\u0648\u0641 \u062c\u0646\u0648\u0628\u064a \u0627\u0644\u0628\u0644\u0627\u062f"
+  },
+  {
+    "timestamp": "2026-04-15T13:07:41.704702+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will Trump agree to Iranian enrichment of uranium in April?",
+    "score": 13
   }
 ]
