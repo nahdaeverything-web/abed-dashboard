@@ -2535,5 +2535,14 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran permanent peace deal by April 22, 2026?",
     "score": 15
+  },
+  {
+    "timestamp": "2026-04-15T05:51:28.537581+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "#\u0639\u0627\u062c\u0644 | \u0625\u0630\u0627\u0639\u0629 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a: \u0627\u0639\u062a\u0631\u0627\u0636 3 \u0635\u0648\u0627\u0631\u064a\u062e \u0645\u0646 \u0623\u0635\u0644 10 \u0623\u0637\u0644\u0642\u062a \u0645\u0646 \u0644\u0628\u0646\u0627\u0646 \u0648\u0623\u062e\u0631\u0649 \u0633\u0642\u0637\u062a \u0641\u064a \u0645\u0646\u0627\u0637\u0642 \u0645\u0641\u062a\u0648\u062d\u0629"
   }
 ]
