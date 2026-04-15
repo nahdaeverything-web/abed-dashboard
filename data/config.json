@@ -20,7 +20,7 @@
     "escalation_threshold_pts": 15,
     "min_bypass_hours": 1,
     "score_threshold": 7,
-    "cluster_window_seconds": 180
+    "cluster_window_seconds": 300
   },
   "urgent_monitor": {
     "_comment": "urgent_monitor.py — continuous loop, systemd service. HOT-RELOAD: config re-read every cycle.",
