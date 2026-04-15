@@ -2553,5 +2553,12 @@
     "category": "geopolitical",
     "sources": 2,
     "headline": "\u063a\u0627\u0631\u0627\u062a \u0625\u0633\u0631\u0627\u0626\u064a\u0644 \u062a\u062a\u0648\u0627\u0635\u0644 \u0639\u0644\u0649 \u0644\u0628\u0646\u0627\u0646.. \u0648\u0627\u0633\u062a\u0647\u062f\u0627\u0641 \u0633\u064a\u0627\u0631\u0627\u062a \u062c\u0646\u0648\u0628\u0627 [https://ara.tv/jl79a](https://ara.tv/jl79a)"
+  },
+  {
+    "timestamp": "2026-04-15T07:07:18.732227+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Iran agrees to surrender enriched uranium stockpile by April 30, 2026?",
+    "score": 17
   }
 ]
