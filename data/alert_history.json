@@ -2824,5 +2824,14 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran diplomatic meeting by April 22, 2026?",
     "score": 12
+  },
+  {
+    "timestamp": "2026-04-16T20:16:33.307626+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 12,
+    "category": "geopolitical",
+    "sources": 2,
+    "headline": "#\u0639\u0627\u062c\u0644 | \u0645\u0631\u0627\u0633\u0644 \u0627\u0644\u062a\u0644\u0641\u0632\u064a\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a: \u0642\u0635\u0641 \u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a \u0639\u0644\u0649 \u0642\u0636\u0627\u0621 \u0635\u0648\u0631 \u062c\u0646\u0648\u0628\u064a \u0644\u0628\u0646\u0627\u0646"
   }
 ]
