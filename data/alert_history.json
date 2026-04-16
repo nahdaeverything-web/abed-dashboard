@@ -2762,5 +2762,12 @@
     "type": "SCHEDULED_BET",
     "market": "Will Donald Trump announce that the United States blockade of the Strait of Horm",
     "score": 12
+  },
+  {
+    "timestamp": "2026-04-16T07:07:22.984893+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Military action against Iran ends by April 17, 2026?",
+    "score": 18
   }
 ]
