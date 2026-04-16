@@ -2739,5 +2739,12 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran permanent peace deal by May 31, 2026?",
     "score": 13
+  },
+  {
+    "timestamp": "2026-04-16T03:07:21.636532+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US x Iran ceasefire extended by April 21, 2026?",
+    "score": 13
   }
 ]
