@@ -2918,5 +2918,12 @@
     "type": "SCHEDULED_BET",
     "market": "Will Donald Trump announce that the United States blockade of the Strait of Horm",
     "score": 14
+  },
+  {
+    "timestamp": "2026-04-17T17:07:50.934704+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will Donald Trump announce that the United States blockade of the Strait of Horm",
+    "score": 14
   }
 ]
