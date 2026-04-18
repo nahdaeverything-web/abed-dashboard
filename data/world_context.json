@@ -1,23 +1,23 @@
 {
-    "last_updated": "2026-04-18T12:00:02.267022+00:00",
-    "alerts_24h": 16,
-    "alerts_last_6h": 5,
-    "alerts_previous_6h": 4,
-    "trend_direction": "STABLE",
+    "last_updated": "2026-04-18T12:30:01.412356+00:00",
+    "alerts_24h": 17,
+    "alerts_last_6h": 6,
+    "alerts_previous_6h": 3,
+    "trend_direction": "ACCELERATING",
     "alerts_by_type": {
         "SCHEDULED_BET": 8,
-        "NEWS_SIGNAL": 7,
+        "NEWS_SIGNAL": 8,
         "POSITION_MATCH": 1
     },
     "category_breakdown": {
-        "geopolitical": 6,
+        "geopolitical": 7,
         "oil": 1
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 11.0,
+        "avg": 11.1,
         "max": 13,
-        "count": 7
+        "count": 8
     },
     "open_positions": 22,
     "total_deployed": 131.73
