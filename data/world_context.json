@@ -1,12 +1,12 @@
 {
-    "last_updated": "2026-04-18T03:00:01.744884+00:00",
-    "alerts_24h": 15,
-    "alerts_last_6h": 3,
+    "last_updated": "2026-04-18T03:30:01.660904+00:00",
+    "alerts_24h": 14,
+    "alerts_last_6h": 2,
     "alerts_previous_6h": 4,
-    "trend_direction": "STABLE",
+    "trend_direction": "DECLINING",
     "alerts_by_type": {
-        "SCHEDULED_BET": 9,
-        "NEWS_SIGNAL": 6
+        "NEWS_SIGNAL": 6,
+        "SCHEDULED_BET": 8
     },
     "category_breakdown": {
         "geopolitical": 6
