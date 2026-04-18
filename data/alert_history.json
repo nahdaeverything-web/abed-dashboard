@@ -3013,5 +3013,12 @@
     "monitor": "news_crossref",
     "type": "POSITION_MATCH",
     "position": "Will Crude Oil (CL) hit (HIGH) $150 by end of June?"
+  },
+  {
+    "timestamp": "2026-04-18T11:07:21.160863+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Iran x Israel/US conflict ends by December 31?",
+    "score": 15
   }
 ]
