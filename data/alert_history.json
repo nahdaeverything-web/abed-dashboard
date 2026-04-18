@@ -3082,5 +3082,12 @@
     "type": "NEW_BET",
     "market": "Will the Iranian regime fall by June 30?",
     "score": 10
+  },
+  {
+    "timestamp": "2026-04-18T22:40:55.176722+00:00",
+    "monitor": "newbet",
+    "type": "NEW_BET",
+    "market": "Will the Iranian regime fall by June 30?",
+    "score": 10
   }
 ]
