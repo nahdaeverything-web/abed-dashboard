@@ -3165,5 +3165,12 @@
     "type": "SCHEDULED_BET",
     "market": "Will the next diplomatic US-Iran meeting be in Turkey?",
     "score": 14
+  },
+  {
+    "timestamp": "2026-04-19T15:07:51.722435+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will Trump visit Pakistan by April 30?",
+    "score": 11
   }
 ]
