@@ -58,9 +58,9 @@
   "context_builder": {
     "status": "completed",
     "alerts_processed": 13,
-    "trend": "DECLINING",
+    "trend": "STABLE",
     "positions_with_signals": 0,
-    "last_updated": "2026-04-20T11:00:02.507698+00:00"
+    "last_updated": "2026-04-20T11:30:02.095444+00:00"
   },
   "update": {
     "status": "completed",
