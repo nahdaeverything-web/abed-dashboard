@@ -3218,5 +3218,12 @@
     "type": "SCHEDULED_BET",
     "market": "Iran x Israel/US conflict ends by May 15?",
     "score": 13
+  },
+  {
+    "timestamp": "2026-04-20T01:07:31.829060+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US obtains Iranian enriched uranium by May 31?",
+    "score": 12
   }
 ]
