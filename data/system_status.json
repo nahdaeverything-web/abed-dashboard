@@ -19,13 +19,13 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 3369099,
+    "pid": 3369579,
     "status": "running",
     "mode": "auto",
-    "messages_checked": 3,
+    "messages_checked": 2,
     "clusters_formed": 1,
     "analyst_calls": 1,
-    "last_updated": "2026-04-20T19:38:29.565723+00:00"
+    "last_updated": "2026-04-20T19:43:11.817714+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
@@ -49,11 +49,11 @@
     "last_updated": "2026-04-20T01:00:02.282103+00:00"
   },
   "newbet": {
-    "status": "completed",
-    "market_scored": "Will the Iranian regime fall by June 30?",
-    "score": 10,
-    "alert_sent": true,
-    "last_updated": "2026-04-18T22:40:55.180587+00:00"
+    "status": "suppressed",
+    "market_scored": "Iran x Israel/US conflict ends by April 30?",
+    "score": 0,
+    "alert_sent": false,
+    "last_updated": "2026-04-20T19:40:20.085875+00:00"
   },
   "context_builder": {
     "status": "completed",
