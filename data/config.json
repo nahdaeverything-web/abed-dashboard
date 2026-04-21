@@ -35,7 +35,7 @@
   "analyst": {
     "_comment": "LLM call budget shared by scanner, urgent_monitor, gamma_scheduler, newbet, update per cycle",
     "max_llm_checks_per_cycle": 50,
-    "analyst_timeout_seconds": 20
+    "analyst_timeout_seconds": 320
   },
   "_comment_whale_thresholds": "Three intentionally different whale thresholds: whale_monitor.min_trade_size=$50K (portfolio monitoring — large trades on YOUR positions), volume_radar.whale_threshold=$50K (skew display — classify trade as whale-sized for YES/NO direction indicator), newbet.whale_min_size=$2.5K (market context data — lower bar to capture broader flow signal for new bet evaluation)",
   "volume_radar": {
