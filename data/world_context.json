@@ -1,22 +1,22 @@
 {
-    "last_updated": "2026-04-21T18:30:01.894143+00:00",
-    "alerts_24h": 7,
-    "alerts_last_6h": 2,
+    "last_updated": "2026-04-21T19:00:01.498141+00:00",
+    "alerts_24h": 8,
+    "alerts_last_6h": 3,
     "alerts_previous_6h": 1,
     "trend_direction": "ACCELERATING",
     "alerts_by_type": {
         "LOW_SCORE_SUPPRESSED": 1,
-        "NEWS_SIGNAL": 6
+        "NEWS_SIGNAL": 7
     },
     "category_breakdown": {
-        "geopolitical": 5,
+        "geopolitical": 6,
         "sanctions": 1
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 11.0,
+        "avg": 10.9,
         "max": 13,
-        "count": 6
+        "count": 7
     },
     "open_positions": 26,
     "total_deployed": 508.87
