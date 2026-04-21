@@ -43,10 +43,10 @@
     "last_updated": "2026-04-03T21:59:26.221591+00:00"
   },
   "system": {
-    "memory_available_mb": 6422,
-    "swap_used_pct": 65,
+    "memory_available_mb": 5744,
+    "swap_used_pct": 53,
     "disk_free_gb": 51,
-    "last_updated": "2026-04-20T01:00:02.282103+00:00"
+    "last_updated": "2026-04-21T01:00:02.220318+00:00"
   },
   "newbet": {
     "status": "suppressed",
@@ -57,10 +57,10 @@
   },
   "context_builder": {
     "status": "completed",
-    "alerts_processed": 7,
+    "alerts_processed": 8,
     "trend": "ACCELERATING",
     "positions_with_signals": 0,
-    "last_updated": "2026-04-21T00:30:01.896765+00:00"
+    "last_updated": "2026-04-21T01:00:02.145050+00:00"
   },
   "update": {
     "status": "completed",
