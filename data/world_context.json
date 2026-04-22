@@ -1,9 +1,9 @@
 {
-    "last_updated": "2026-04-22T08:30:02.269119+00:00",
+    "last_updated": "2026-04-22T09:00:01.406043+00:00",
     "alerts_24h": 7,
     "alerts_last_6h": 1,
-    "alerts_previous_6h": 2,
-    "trend_direction": "DECLINING",
+    "alerts_previous_6h": 1,
+    "trend_direction": "STABLE",
     "alerts_by_type": {
         "NEWS_SIGNAL": 6,
         "POSITION_UPDATE": 1
