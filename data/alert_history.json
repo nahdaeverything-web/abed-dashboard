@@ -3392,5 +3392,12 @@
     "category": "geopolitical",
     "sources": 1,
     "headline": "\u0639\u0627\u062c\u0644 | \u0648\u0643\u0627\u0644\u0629 \u062a\u0633\u0646\u064a\u0645 \u0639\u0646 \u0639\u0636\u0648 \u0647\u064a\u0626\u0629 \u0631\u0626\u0627\u0633\u0629 \u0645\u062c\u0644\u0633 \u0627\u0644\u0634\u0648\u0631\u0649 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a \u0639\u0644\u064a \u0631\u0636\u0627 \u0633\u0644\u064a\u0645\u064a: \u0625\u064a\u0631\u0627\u0646 \u0628\u062f\u0623\u062a \u0628\u062a\u062d\u0635\u064a\u0644 \u0631\u0633\u0648\u0645 \u0645\u0646 \u0627"
+  },
+  {
+    "timestamp": "2026-04-23T13:07:31.919397+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Strait of Hormuz traffic returns to normal by May 15?",
+    "score": 11
   }
 ]
