@@ -3399,5 +3399,12 @@
     "type": "SCHEDULED_BET",
     "market": "Strait of Hormuz traffic returns to normal by May 15?",
     "score": 11
+  },
+  {
+    "timestamp": "2026-04-23T15:07:53.135344+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US x Iran diplomatic meeting by April 30, 2026?",
+    "score": 11
   }
 ]
