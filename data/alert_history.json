@@ -3422,5 +3422,12 @@
     "type": "SCHEDULED_BET",
     "market": "Iran x Israel/US conflict ends by May 15?",
     "score": 15
+  },
+  {
+    "timestamp": "2026-04-23T19:07:27.943903+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "US x Iran permanent peace deal by May 31, 2026?",
+    "score": 17
   }
 ]
