@@ -3454,5 +3454,12 @@
     "type": "SCHEDULED_BET",
     "market": "Will the Iranian regime fall by June 30?",
     "score": 12
+  },
+  {
+    "timestamp": "2026-04-23T23:07:17.911415+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Iran x Israel/US conflict ends by June 30?",
+    "score": 17
   }
 ]
