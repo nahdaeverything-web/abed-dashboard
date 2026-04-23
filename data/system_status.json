@@ -19,13 +19,13 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 211822,
+    "pid": 212218,
     "status": "running",
     "mode": "auto",
-    "messages_checked": 2,
+    "messages_checked": 1,
     "clusters_formed": 1,
     "analyst_calls": 1,
-    "last_updated": "2026-04-23T06:57:54.069840+00:00"
+    "last_updated": "2026-04-23T07:04:09.363118+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
@@ -60,7 +60,7 @@
     "alerts_processed": 3,
     "trend": "STABLE",
     "positions_with_signals": 0,
-    "last_updated": "2026-04-23T06:30:01.984900+00:00"
+    "last_updated": "2026-04-23T07:00:02.326833+00:00"
   },
   "update": {
     "status": "completed",
