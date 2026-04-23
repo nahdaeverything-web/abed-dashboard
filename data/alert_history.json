@@ -3429,5 +3429,14 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran permanent peace deal by May 31, 2026?",
     "score": 17
+  },
+  {
+    "timestamp": "2026-04-23T19:25:22.268313+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 10,
+    "category": "houthi",
+    "sources": 1,
+    "headline": "After Tehran explosion reports, Trump warns 'clock is ticking'; USS Bush arrives in the region\nhttps"
   }
 ]
