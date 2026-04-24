@@ -3536,5 +3536,12 @@
     "category": "geopolitical",
     "sources": 1,
     "headline": "\"\u0644\u0627 \u0644\u0642\u0627\u0621 \u0645\u0639 \u0627\u0644\u0623\u0645\u064a\u0631\u0643\u064a\u064a\u0646\".. \u0645\u0631\u0627\u0633\u0644\u0646\u0627 \u064a\u0627\u0633\u0631 \u0645\u0633\u0639\u0648\u062f \u064a\u0631\u0635\u062f \u0627\u0644\u0645\u0648\u0642\u0641 \u0627\u0644\u0625\u064a\u0631\u0627\u0646\u064a \u0627\u0644\u0631\u0633\u0645\u064a \u0648\u0646\u0641\u064a \u0637\u0647\u0631\u0627\u0646 \u0627\u0644\u0642\u0627\u0637\u0639 \u0644\u0644\u062c\u0644\u0648\u0633 \u0645\u0639"
+  },
+  {
+    "timestamp": "2026-04-24T23:07:58.291686+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Will no qualifying diplomatic US-Iran meeting occur by June 30, 2026?",
+    "score": 11
   }
 ]
