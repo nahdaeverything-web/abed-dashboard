@@ -31,8 +31,9 @@
     "status": "completed",
     "mode": "auto",
     "candidates_found": 5,
-    "alert_sent": false,
-    "last_updated": "2026-04-24T19:07:54.678529+00:00"
+    "best_score": 17,
+    "alert_sent": true,
+    "last_updated": "2026-04-24T21:07:20.113439+00:00"
   },
   "volume_radar": {
     "status": "completed",
