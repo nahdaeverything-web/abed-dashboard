@@ -3479,5 +3479,12 @@
     "category": "geopolitical",
     "sources": 1,
     "headline": "\u0639\u0627\u062c\u0644 | \u0631\u0648\u064a\u062a\u0631\u0632: \u0627\u0644\u0628\u0646\u062a\u0627\u063a\u0648\u0646 \u064a\u062f\u0631\u0633 \u062e\u064a\u0627\u0631\u0627\u062a \u0644\u0645\u0639\u0627\u0642\u0628\u0629 \u0623\u0639\u0636\u0627\u0621 \u0641\u064a \u0627\u0644\u0646\u0627\u062a\u0648 \u062a\u0639\u062a\u0642\u062f \u0648\u0627\u0634\u0646\u0637\u0646 \u0623\u0646\u0647\u0645 \u0644\u0645 \u064a\u062f\u0639\u0645\u0648\u0627 \u0639\u0645\u0644\u064a\u0627\u062a\u0647\u0627 \u0628\u0625"
+  },
+  {
+    "timestamp": "2026-04-24T07:07:21.045703+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Iran x Israel/US conflict ends by May 15?",
+    "score": 12
   }
 ]
