@@ -1,22 +1,22 @@
 {
-    "last_updated": "2026-04-24T21:30:02.056611+00:00",
-    "alerts_24h": 9,
-    "alerts_last_6h": 2,
+    "last_updated": "2026-04-24T22:00:02.297851+00:00",
+    "alerts_24h": 10,
+    "alerts_last_6h": 3,
     "alerts_previous_6h": 2,
     "trend_direction": "STABLE",
     "alerts_by_type": {
         "SCHEDULED_BET": 4,
-        "NEWS_SIGNAL": 5
+        "NEWS_SIGNAL": 6
     },
     "category_breakdown": {
-        "geopolitical": 5
+        "geopolitical": 6
     },
     "dominant_category": "geopolitical",
     "scores_24h": {
-        "avg": 11.6,
+        "avg": 11.3,
         "max": 14,
-        "count": 5
+        "count": 6
     },
-    "open_positions": 22,
-    "total_deployed": 428.56
+    "open_positions": 24,
+    "total_deployed": 444.93
 }
