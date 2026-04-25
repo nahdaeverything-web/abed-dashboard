@@ -57,10 +57,10 @@
   },
   "context_builder": {
     "status": "completed",
-    "alerts_processed": 5,
+    "alerts_processed": 4,
     "trend": "STABLE",
     "positions_with_signals": 0,
-    "last_updated": "2026-04-25T17:30:01.978369+00:00"
+    "last_updated": "2026-04-25T18:00:02.413105+00:00"
   },
   "update": {
     "status": "completed",
