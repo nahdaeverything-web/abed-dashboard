@@ -19,13 +19,13 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 2727470,
+    "pid": 2730378,
     "status": "running",
     "mode": "auto",
-    "messages_checked": 9,
+    "messages_checked": 3,
     "clusters_formed": 1,
     "analyst_calls": 1,
-    "last_updated": "2026-04-30T13:49:03.613001+00:00"
+    "last_updated": "2026-04-30T13:55:01.288367+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
