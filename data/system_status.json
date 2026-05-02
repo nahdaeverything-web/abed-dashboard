@@ -19,13 +19,13 @@
     "last_updated": "2026-04-03T22:50:04.409656+00:00"
   },
   "news_scanner": {
-    "pid": 3779623,
+    "pid": 3783099,
     "status": "running",
     "mode": "auto",
     "messages_checked": 1,
     "clusters_formed": 1,
     "analyst_calls": 1,
-    "last_updated": "2026-05-02T00:56:36.592130+00:00"
+    "last_updated": "2026-05-02T01:03:26.263600+00:00"
   },
   "gamma_scheduler": {
     "status": "completed",
@@ -43,10 +43,10 @@
     "last_updated": "2026-04-03T21:59:26.221591+00:00"
   },
   "system": {
-    "memory_available_mb": 5657,
-    "swap_used_pct": 92,
+    "memory_available_mb": 4327,
+    "swap_used_pct": 99,
     "disk_free_gb": 47,
-    "last_updated": "2026-05-01T01:00:02.290055+00:00"
+    "last_updated": "2026-05-02T01:00:01.833841+00:00"
   },
   "newbet": {
     "status": "suppressed",
@@ -60,7 +60,7 @@
     "alerts_processed": 0,
     "trend": "STABLE",
     "positions_with_signals": 0,
-    "last_updated": "2026-05-02T00:30:02.149871+00:00"
+    "last_updated": "2026-05-02T01:00:02.305096+00:00"
   },
   "update": {
     "status": "completed",
