@@ -1,9 +1,9 @@
 {
-    "last_updated": "2026-05-03T01:00:01.569265+00:00",
+    "last_updated": "2026-05-03T01:30:01.729710+00:00",
     "alerts_24h": 5,
     "alerts_last_6h": 2,
-    "alerts_previous_6h": 3,
-    "trend_direction": "DECLINING",
+    "alerts_previous_6h": 2,
+    "trend_direction": "STABLE",
     "alerts_by_type": {
         "NEWS_SIGNAL": 3,
         "SCHEDULED_BET": 2
