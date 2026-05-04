@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-05-04T09:30:01.349863+00:00",
+    "last_updated": "2026-05-04T10:00:02.073657+00:00",
     "alerts_24h": 1,
     "alerts_last_6h": 1,
     "alerts_previous_6h": 0,
@@ -16,6 +16,6 @@
         "max": 10,
         "count": 1
     },
-    "open_positions": 16,
-    "total_deployed": 1282.66
+    "open_positions": 17,
+    "total_deployed": 1381.47
 }
