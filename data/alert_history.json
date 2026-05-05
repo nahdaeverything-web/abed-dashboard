@@ -3693,5 +3693,14 @@
     "type": "SCHEDULED_BET",
     "market": "Iran leadership change by December 31?",
     "score": 15
+  },
+  {
+    "timestamp": "2026-05-05T21:16:27.534207+00:00",
+    "monitor": "news_scanner",
+    "type": "NEWS_SIGNAL",
+    "score": 14,
+    "category": "geopolitical",
+    "sources": 1,
+    "headline": "\u0637\u0647\u0631\u0627\u0646 \u062a\u0646\u0641\u064a \u0627\u0633\u062a\u0647\u062f\u0627\u0641 \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a: \"\u0631\u062f\u0646\u0627 \u0645\u0648\u062c\u0647 \u062d\u0635\u0631\u0627\u064b \u0644\u0644\u062a\u062d\u0631\u0643\u0627\u062a \u0627\u0644\u0623\u0645\u064a\u0631\u0643\u064a\u0629\"\nhttps://royanews.tv/news/381475"
   }
 ]
