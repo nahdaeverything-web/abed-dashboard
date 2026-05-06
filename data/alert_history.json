@@ -3709,5 +3709,12 @@
     "type": "SCHEDULED_BET",
     "market": "US x Iran permanent peace deal by May 31, 2026?",
     "score": 15
+  },
+  {
+    "timestamp": "2026-05-06T01:07:41.884022+00:00",
+    "monitor": "gamma_scheduler",
+    "type": "SCHEDULED_BET",
+    "market": "Iran closes its airspace by May 8?",
+    "score": 15
   }
 ]
